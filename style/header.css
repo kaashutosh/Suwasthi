@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.s-header {
+    background: #3A170D;
+    color: #fff;
+    width: 100%;
+}
+
+/* TOP ROW DESKTOP */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 30px;
+}
+
+.logo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+}
+
+.brand {
+    font-size: 22px;
+    margin-top: 4px;
+    color: #d6c39a;
+}
+
+/* SEARCH */
+.search-box {
+    width: 70%;
+    margin: auto;
+    padding: 12px 20px;
+    background: #4c2619;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+}
+
+.search-icon {
+    margin-right: 10px;
+    opacity: 0.8;
+}
+
+/* ACCOUNT BUTTON (DESKTOP) */
+.desktop-account {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #fff;
+    background: transparent;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* MOBILE ACCOUNT ICON */
+.mobile-account {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 12px 30px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    display: none;
+    background: #4c2619;
+    padding: 8px 0;
+    border-radius: 4px;
+    min-width: 200px;
+}
+
+.dropdown-menu a {
+    padding: 10px 18px;
+    display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* HAMBURGER MOBILE */
+.mobile-menu {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .desktop-account {
+        display: none;
+    }
+
+    .mobile-account {
+        display: block;
+    }
+
+    .logo-box {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .header-top {
+        position: relative;
+    }
+
+    .search-box {
+        width: 95%;
+        margin-top: 10px;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #3A170D;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
