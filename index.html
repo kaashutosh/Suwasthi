@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DiaCorexPowder</title>
-    <link rel="stylesheet" href="../style/header.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../style/DiaCorex.css">
-    <link rel="stylesheet" href="../style/footer.css">
+    <title>Suwasthi</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/footer.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--<link rel="stylesheet" href="/style/header.css">-->
+    <link rel="stylesheet" href="assets/css/header.css">
+
+
+
+
 </head>
-    <!--header-->
-    <header class="s-header">
+
+<header class="s-header">
 
     <!-- TOP SECTION -->
     <div class="header-top">
         <button class="mobile-menu" onclick="toggleMenu()">☰</button>
 
         <div class="logo-box">
-            <img src="/images/logo.png" class="logo" alt="Suwasthi Logo">
+            <img src="assets/images/logo.png" class="logo" alt="Suwasthi Logo">
             <span class="brand">Suwasthi</span>
         </div>
 
@@ -44,8 +55,8 @@
                 <a href="#">Diabetes Support</a>
                 <span class="arrow">▼</span>
                 <ul class="dropdown-menu">
-                    <li><a href="/pages/DiaCorexPowder.html">DiaCorex Powder</a></li>
-                    <li><a href="#">Insulin Support</a></li>
+                    <li><a href="/pages/diacorex-powder.html">DiaCorex Powder</a></li>
+                    <li><a href="/pages/">Insulin Support</a></li>
                     <li><a href="#">Metabolism Booster</a></li>
                     <li><a href="#">Ayurvedic Support</a></li>
                 </ul>
@@ -60,35 +71,138 @@
 
 </header>
 
-<body>
-    
+<hr><br>
 
-<!--  Certificate  -->
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-left">
+            <img src="hero.png" alt="Guru Image">
+        </div>
+
+        <div class="hero-right">
+            <h1>
+                सुवास्थि <span>DiaCurex</span> अच्छा उत्पाद है।<br>
+                शुगर में यह अवश्य लाभ करेगा।
+            </h1>
+
+            <div class="quote-box">
+                <p>
+                    सुवास्थि द्वारा इतनी मेहनत और इतनी लगन से बनायीं ये
+                    आयुर्वेदिक दवाइयां समाज को एक नई दिशा देंगी और लोगों को
+                    बिना किसी नुकसान के आराम देंगी।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--Certification-->
+
     <section class="certificate-section">
         <h2>Certificate of Natural Goodness</h2>
 
         <div class="certificate-grid">
             <div class="certificate-item">
-                <img src="/images/certificate/Cli.png" alt="Gluten Free Certificate">
+                <img src="/assets/images/certificate/GMP.png" alt="Gluten Free Certificate">
             </div>
 
             <div class="certificate-item">
-                <img src="/images/certificate/Glu.png" alt="100% Pure Natural & Vegan">
+                <img src="/assets/images/certificate/ISO.png" alt="100% Pure Natural & Vegan">
             </div>
 
             <div class="certificate-item">
-                <img src="/images/certificate/Hig.png" alt="Clinically Tested Ingredients">
+                <img src="/assets/images/certificate/MII.png" alt="Clinically Tested Ingredients">
             </div>
 
             <div class="certificate-item">
-                <img src="/images/certificate/Pure.png" alt="GMO Free Certificate">
+                <img src="/assets/images/certificate/NHC.png" alt="GMO Free Certificate">
+            </div>
+
+            <div class="certificate-item">
+                <img src="/assets/images/certificate/AYUSH.jpeg" alt="GMO Free Certificate">
+            </div>
+        </div>
+    </section>
+
+
+    <!--This is product-->
+
+    <section class="shop">
+        <h2 class="shop-title">Shop Now</h2>
+
+        <div class="product-grid">
+
+            <!-- Card 1 -->
+            <div class="product-card">
+                <div class="img-box">
+                    <span class="badge">-35%</span>
+                    <img src="/assets/images/Diabeties_img.png" alt="Paachan Pro">
+                </div>
+
+                <h3>DIABETES DETOX CAPSULE</h3>
+
+                <p class="price">
+                    <span class="new">Rs. 1,699.00</span>
+                    <span class="old">Rs. 3,299.00</span>
+                </p>
+
+                <button class="cart-btn">Add to cart</button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card">
+                <div class="img-box">
+                    <span class="badge">-31%</span>
+                    <img src="/assets/images/kerela&Jammu_img.png" alt="PilesCurex">
+                </div>
+
+                <h3>KARELA AND JAMMU POWDER</h3>
+
+                <p class="price">
+                    <span class="new">Rs. 1,800.00</span>
+                    <span class="old">Rs. 2,600.00</span>
+                </p>
+
+                <button class="cart-btn">Add to cart</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card">
+                <div class="img-box">
+                    <span class="badge">-15%</span>
+                    <img src="/assets/images/Gas_Nivarak_img.png" alt="DiaCurex">
+                </div>
+
+                <h3>GAS NIVARAK POWDER</h3>
+
+                <p class="price">
+                    <span class="new">Rs. 1,699.00</span>
+                    <span class="old">Rs. 2,000.00</span>
+                </p>
+
+                <button class="cart-btn">Add to cart</button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="product-card">
+                <div class="img-box">
+                    <span class="badge">-15%</span>
+                    <img src="/assets/images/Urga_img.png" alt="ArthoCalm">
+                </div>
+
+                <h3>URGA VARDHAK POWDER</h3>
+
+                <p class="price">
+                    <span class="new">Rs. 1,699.00</span>
+                    <span class="old">Rs. 3,299.00</span>
+                </p>
+
+                <button class="cart-btn">Add to cart</button>
             </div>
 
         </div>
     </section>
 
-
-    <!--  Reviewer Section   -->
     <section class="review-section">
         <h2 class="review-title">What Customers Say</h2>
 
@@ -242,161 +356,149 @@
     </section>
 
 
-    <!--   Ingrient Section   -->
-       <section class="ingredients-section">
-    <h2>What's Inside</h2>
-    <p class="subtitle">Honest, Transparent, and 100% Natural Ingredients</p>
+    <!-- our story-->
+    <section class="our-story">
+        <div class="story-container">
 
-    <div class="ingredients-grid">
+            <!-- LEFT CONTENT -->
+            <div class="story-text">
+                <h2>Our Story</h2>
 
-        <!-- CARD 1 -->
-        <div class="ingredient-card">
-            <div class="card-title">DARUHARIDRA</div>
-            <img src="img1.jpg" alt="Daruharidra">
-            <p class="card-text">Improves Insulin Sensitivity</p>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="ingredient-card">
-            <div class="card-title">KARELA</div>
-            <img src="img2.jpg" alt="Karela">
-            <p class="card-text">Supports Glucose Metabolism</p>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="ingredient-card">
-            <div class="card-title">GUDMAR</div>
-            <img src="img3.jpg" alt="Gudmar">
-            <p class="card-text">Curbs Sugar Cravings</p>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="ingredient-card">
-            <div class="card-title">INGREDIENT 4</div>
-            <img src="img4.jpg" alt="">
-            <p class="card-text">Benefit Text Here</p>
-        </div>
-
-        <!-- CARD 5 -->
-        <div class="ingredient-card">
-            <div class="card-title">INGREDIENT 5</div>
-            <img src="img5.jpg" alt="">
-            <p class="card-text">Benefit Text Here</p>
-        </div>
-
-        <!-- CARD 6 -->
-        <div class="ingredient-card">
-            <div class="card-title">INGREDIENT 6</div>
-            <img src="img6.jpg" alt="">
-            <p class="card-text">Benefit Text Here</p>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- How to consume powder   -->
-<section class="consume-section">
-    <h2>How to consume this powder</h2>
-
-    <div class="consume-grid">
-
-        <!-- Step 1 -->
-        <div class="consume-card">
-            <img src="step1.jpg" alt="Step 1">
-            <div class="consume-info">
-                <span class="step-number">1</span>
-                <p>Take 1 scoop (2.5-3g) of the powder</p>
+                <p>
+                    Ayurveda, the ancient Indian system of natural healing,
+                    focuses on balancing the body, mind, and spirit for overall
+                    well-being. Using herbal remedies, dietary practices,
+                    and lifestyle changes, Ayurveda helps prevent diseases and
+                    promotes holistic health. Rooted in nature, it harnesses the
+                    power of medicinal plants like Tulsi, Ashwagandha, and Amla to
+                    restore harmony and vitality. Embrace Ayurveda for a healthier,
+                    more balanced life! 🌱✨
+                </p>
             </div>
-        </div>
 
-        <!-- Step 2 -->
-        <div class="consume-card">
-            <img src="step2.jpg" alt="Step 2">
-            <div class="consume-info">
-                <span class="step-number">2</span>
-                <p>Mix it into 1 cup of lukewarm water & stir well</p>
+            <!-- RIGHT IMAGE -->
+            <div class="story-image">
+                <img src="/assets/images/bottlerev.png" alt="Happy Customers">
+
+                <div class="image-overlay">
+
+                    <h3>20 Lakh+</h3>
+                    <p>Bottles Sold</p>
+
+                </div>
             </div>
-        </div>
 
-        <!-- Step 3 -->
-        <div class="consume-card">
-            <img src="step3.jpg" alt="Step 3">
-            <div class="consume-info">
-                <span class="step-number">3</span>
-                <p>Drink it twice a day, at least 30 minutes before meals</p>
+        </div>
+    </section>
+
+
+    <!-- Health Goals  -->
+    <section class="health-goals">
+        <h2>Shop By Health Goals</h2>
+
+        <div class="goals-grid">
+
+            <!-- Card 1 -->
+            <div class="goal-card">
+                <h3>For Managing Sugar</h3>
+                <img src="/assets/images/Diabeties_img.png" alt="Managing Sugar">
+                <a href="managing-sugar.html" class="btn">Know More</a>
             </div>
+
+            <!-- Card 2 -->
+            <div class="goal-card">
+                <h3>For Joint Support</h3>
+                <img src="/assets/images/Gas_Nivarak_img.png" alt="Joint Support">
+                <a href="joint-support.html" class="btn">Know More</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="goal-card">
+                <h3>For Healthy Gut</h3>
+                <img src="/assets/images/Gas_Nivarak_img.png" alt="Healthy Gut">
+                <a href="healthy-gut.html" class="btn">Know More</a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="goal-card">
+                <h3>For Treating Piles</h3>
+                <img src="/assets/images/kerela&Jammu_img.png" alt="Treating Piles">
+                <a href="treating-piles.html" class="btn">Know More</a>
+            </div>
+
         </div>
-
-    </div>
-</section>
+    </section>
 
 
 
 
-
-    <script src="/JavaScript/reviewer.js"></script>
+    <script src="/assets/js/reviewer.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 
+
+<!-- footer-->
+
 <footer class="footer">
-        <div class="footer-container">
+    <div class="footer-container">
 
-            <!-- Logo Section -->
-            <div class="footer-logo">
-                <img src="/images/logo.png" alt="Suwasthi Logo">
-            </div>
+        <!-- Logo Section -->
+        <div class="footer-logo">
+            <img src="/assets/images/logo.png" alt="Suwasthi Logo">
+        </div>
 
-            <!-- Quick Links -->
-            <div class="footer-links">
-                <a href="/Suwasthi/pages/about-us.html">About Us</a>
-            <a href="/Suwasthi/pages/carrers.html">Careers</a>
-            <a href="/Suwasthi/pages/contact-us.html">Contact Us</a>
-            <a href="/Suwasthi/pages/privacy-policy.html">Privacy Policy</a>
-            <a href="/Suwasthi/pages/term-condition.html">Terms & Conditions</a>
-            </div>
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <a href="/pages/about-us.html">About Us</a>
+            <a href="/pages/carrers.html">Careers</a>
+            <a href="/pages/contact-us.html">Contact Us</a>
+            <a href="/pages/privacy-policy.html">Privacy Policy</a>
+            <a href="/pages/term-condition.html">Terms & Conditions</a>
+        </div>
 
-            <!-- India Address -->
-            <div class="footer-address">
-                <h4>Vaidhya Amrit Arydha</h4>
-                <p>74 Block, E Sector 6, Noida,<br>
-                    Uttar Pradesh 201301<br>
-                    Near by Bharat Plastic Private Limited,<br>
-                    Email : vaidhyaamritayurveda@gmail.com<br>
-                    Phone : +917754822019
-                </p>
-                <p>Monday – Saturday<br>
-                    10:00 AM – 06:00 PM</p>
+        <!-- India Address -->
+        <div class="footer-address">
+            <h4>Vaidhya Amrit Arydha</h4>
+            <p>74 Block, E Sector 6, Noida,<br>
+                Uttar Pradesh 201301<br>
+                Near by Bharat Plastic Private Limited,<br>
+                Email : vaidhyaamritayurveda@gmail.com<br>
+                Phone : +917754822019
+            </p>
+            <p>Monday – Saturday<br>
+                10:00 AM – 06:00 PM</p>
 
-                <div class="social-icons">
-                    <!-- Phone -->
-                    <a href="tel:+917754822019" aria-label="Call Us">
-                        <i class="fas fa-phone"></i>
-                    </a>
+            <div class="social-icons">
+                <!-- Phone -->
+                <a href="tel:+917754822019" aria-label="Call Us">
+                    <i class="fas fa-phone"></i>
+                </a>
 
-                    <!-- Email -->
-                    <a href="mailto:vaidhyaamritayurveda@gmail.com" aria-label="Email Us">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                <!-- Email -->
+                <a href="mailto:vaidhyaamritayurveda@gmail.com" aria-label="Email Us">
+                    <i class="fas fa-envelope"></i>
+                </a>
 
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/suwasthiindia" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/suwasthiindia" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
 
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/suwasthiindia" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/suwasthiindia" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
 
         </div>
 
-        <!-- Copyright -->
-        <div class="footer-bottom">
-            © 2026 Vaidhya Amrit Arydha.
-        </div>
-    </footer>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        © 2026 Vaidhya Amrit Arydha.
+    </div>
+</footer>
+
 
 </html>
