@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,4 +67,60 @@ document.getElementById("orderForm").addEventListener("submit", async (e)=>{
 </script>
 
 </body>
+</html>-->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{font-family:Arial;padding:20px;}
+.product{text-align:center;margin-bottom:20px;}
+.product img{width:260px;}
+form input, textarea{width:100%;padding:12px;margin:6px 0;border:1px solid #ccc;font-size:15px;border-radius:6px;}
+button{background:#c4894f;border:none;color:white;width:100%;padding:15px;font-size:18px;margin-top:10px;border-radius:6px;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<div class="product">
+    <img id="pImg">
+    <h2 id="pName"></h2>
+    <h3>Price: Rs <span id="pPrice"></span></h3>
+</div>
+
+<form id="orderForm">
+<input name="fname" placeholder="First Name" required>
+<input name="lname" placeholder="Last Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<textarea name="address" placeholder="House no / Plot no / Full Address" required></textarea>
+<input name="pincode" placeholder="Pincode" required>
+<input name="district" placeholder="District" required>
+<input name="state" placeholder="State" required>
+<button type="submit">Submit Order</button>
+</form>
+
+<script>
+const params = new URLSearchParams(location.search);
+document.getElementById('pName').innerText = params.get('name');
+document.getElementById('pPrice').innerText = params.get('price');
+document.getElementById('pImg').src = params.get('img');
+
+document.getElementById('orderForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    fetch('submit.php', {
+        method: 'POST',
+        body: new FormData(this)
+    }).then(()=> alert("Order Submitted Successfully!"));
+});
+</script>
+
+</body>
 </html>
+
