@@ -6,7 +6,7 @@
 }
 
 .s-header {
-    background: #3A170D;
+    background: hsl(22, 100%, 51%);
     color: #fff;
     width: 100%;
 }
@@ -40,7 +40,7 @@
     width: 70%;
     margin: auto;
     padding: 12px 20px;
-    background: #4c2619;
+    background: #ffffff;
     border-radius: 30px;
     display: flex;
     align-items: center;
