@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Responsive Grid System */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        /* Card Container */
+        .card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #5d2b05;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Media Wrapper (Image & Video) */
+        .media-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Keeps cards square */
+            overflow: hidden;
+            border-radius: 10px;
+            background: #f9f9f9;
+        }
+
+        .media-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.4s ease;
+        }
+
+        .media-box video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Hover States */
+        .card:hover .media-box img { opacity: 0; }
+        .card:hover .media-box video { opacity: 1; }
+
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background-color: #4a1e05;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-grid">
+    <div class="card">
+        <h3>For Managing Sugar</h3>
+        <div class="media-box">
+            <img src="../assets/images/Diabeties_img.png" alt="Sugar Support">
+            <video loop playsinline muted>
+                <source src="../assets/videos/video1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <a href="#" class="btn">Know More</a>
+    </div>
+
+    <div class="card">
+        <h3>For Joint Support</h3>
+        <div class="media-box">
+            <img src="../assets/images/Diabeties_img.png" alt="Joint Support">
+            <video loop playsinline muted>
+                <source src="../assets/videos/video1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <a href="#" class="btn">Know More</a>
+    </div>
+
+    <div class="card">
+        <h3>For Healthy Gut</h3>
+        <div class="media-box">
+            <img src="../assets/images/Diabeties_img.png" alt="Healthy Gut">
+            <video loop playsinline muted>
+                <source src="../assets/videos/video1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <a href="#" class="btn">Know More</a>
+    </div>
+
+    <div class="card">
+        <h3>For Treating Piles</h3>
+        <div class="media-box">
+            <img src="../assets/images/Diabeties_img.png" alt="Piles Treatment">
+            <video loop playsinline muted>
+                <source src="../assets/videos/video1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <a href="#" class="btn">Know More</a>
+    </div>
+</div>
+
+<script>
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        const video = card.querySelector('video');
+
+        card.addEventListener('mouseenter', () => {
+            video.muted = false; // Enable voice
+            video.play().catch(e => console.log("User interaction needed for audio"));
+        });
+
+        card.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0;
+            video.muted = true;
+        });
+    });
+</script>
+
+</body>
+</html>

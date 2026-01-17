@@ -25,3 +25,21 @@ function searchProducts() {
         }
     });
 }
+
+/*  For helth goal video  */
+const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            const video = card.querySelector('video');
+
+            card.addEventListener('mouseenter', () => {
+                video.muted = false; // Enable voice
+                video.play().catch(e => console.log("User interaction needed for audio"));
+            });
+
+            card.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+                video.muted = true;
+            });
+        });

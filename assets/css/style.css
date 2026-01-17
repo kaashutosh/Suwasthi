@@ -818,7 +818,7 @@ body {
 
 /* Health Goals  */
 
-/* Section */
+/* Section 
 .health-goals {
     padding: 60px 20px;
     text-align: center;
@@ -830,7 +830,7 @@ body {
     font-weight: 500;
 }
 
-/* Grid */
+/* Grid *
 .goals-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -839,7 +839,7 @@ body {
     margin: auto;
 }
 
-/* Card */
+/* Card *
 .goal-card {
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     border-radius: 10px;
@@ -857,7 +857,7 @@ body {
     color: #4b1d10;
 }
 
-/* Image */
+/* Image *
 .goal-card img {
     width: 100%;
     max-width: 260px;
@@ -866,7 +866,7 @@ body {
     margin-bottom: 25px;
 }
 
-/* Button */
+/* Button *
 .btn {
     background: #3b1409;
     color: #fff;
@@ -881,14 +881,14 @@ body {
     background: #5a2414;
 }
 
-/* Tablet */
+/* Tablet *
 @media (max-width: 992px) {
     .goals-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Mobile */
+/* Mobile *
 @media (max-width: 480px) {
     .goals-grid {
         grid-template-columns: 1fr;
@@ -903,34 +903,80 @@ body {
     }
 }
 
+*/
 
+/* Health Goals  */
+/* Responsive Grid System */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            font-family: sans-serif;
+        }
 
+        /* Card Container */
+        .card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
 
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
+        .card h3 {
+            color: #5d2b05;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
 
+        /* Media Wrapper (Image & Video) */
+        .media-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Keeps cards square */
+            overflow: hidden;
+            border-radius: 10px;
+            background: #f9f9f9;
+        }
 
+        .media-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.4s ease;
+        }
 
+        .media-box video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
 
+        /* Hover States */
+        .card:hover .media-box img { opacity: 0; }
+        .card:hover .media-box video { opacity: 1; }
 
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-right {
-        margin-left: 0;
-        margin-top: 30px;
-    }
-
-    .search-box input {
-        width: 220px;
-    }
-
-    .menu {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-}
+        /* Button Styling */
+        .btn1 {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background-color: #4a1e05;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
