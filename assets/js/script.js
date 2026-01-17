@@ -26,7 +26,7 @@ function searchProducts() {
     });
 }
 
-/*  For helth goal video  */
+/*  For helth goal video  *
 const cards = document.querySelectorAll('.card');
 
         cards.forEach(card => {
@@ -43,3 +43,24 @@ const cards = document.querySelectorAll('.card');
                 video.muted = true;
             });
         });
+
+        */
+       const modal = document.getElementById('videoModal');
+    const popupVideo = document.getElementById('popupVideo');
+
+    function openPopup(src) {
+        popupVideo.src = src;
+        modal.style.display = "flex";
+        popupVideo.play();
+    }
+
+    function closePopup() {
+        modal.style.display = "none";
+        popupVideo.pause();
+        popupVideo.src = "";
+    }
+
+    // Close on background click
+    window.onclick = function(e) {
+        if (e.target == modal) closePopup();
+    }

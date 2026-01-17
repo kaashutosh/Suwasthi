@@ -395,7 +395,8 @@
 
 
 
-    <!-- Health Goals  -->
+    <!-- Health Goals  --
+
     <div class="product-grid">
         <div class="card">
             <h3>For Managing Sugar</h3>
@@ -441,6 +442,58 @@
             <a href="#" class="btn1">Know More</a>
         </div>
     </div>
+-->
+    <div class="product-grid">
+    <div class="card" onclick="openPopup('../assets/videos/video1.mp4')">
+        <h3>For Managing Sugar</h3>
+        <div class="video-box">
+            <video muted preload="metadata">
+                <source src="../assets/videos/video1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="btn1">Know More</div>
+    </div>
+
+    <div class="card" onclick="openPopup('../assets/videos/video2.mp4')">
+        <h3>For Joint Support</h3>
+        <div class="video-box">
+            <video muted preload="metadata">
+                <source src="../assets/videos/video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="btn1">Know More</div>
+    </div>
+
+    <div class="card" onclick="openPopup('../assets/videos/video1.mp4')">
+        <h3>For Managing Sugar</h3>
+        <div class="video-box">
+            <video muted preload="metadata">
+                <source src="../assets/videos/video1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="btn1">Know More</div>
+    </div>
+
+    <div class="card" onclick="openPopup('../assets/videos/video2.mp4')">
+        <h3>For Joint Support</h3>
+        <div class="video-box">
+            <video muted preload="metadata">
+                <source src="../assets/videos/video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="btn1">Know More</div>
+    </div>
+</div>
+
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <video id="popupVideo" controls autoplay>
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+</div>
+
 
 
     <script src="assets/js/reviewer.js"></script>
@@ -496,7 +549,7 @@
                 </a>
 
                 <!-- Instagram -->
-                <a href="https://www.instagram.com/suwasthiindia" target="_blank" aria-label="Instagram">
+                <a href="https://www.instagram.com/vaidhyaamrit?igsh=aW55amF5Y20zMnh4" target="_blank" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>

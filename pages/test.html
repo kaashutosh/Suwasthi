@@ -1,150 +1,384 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Responsive Grid System */
+        :root {
+            --primary-brown: #4a1e05;
+            --bg-light: #f4f4f4;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg-light); }
+
+        /* Grid Layout */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            font-family: sans-serif;
+            gap: 25px;
+            padding: 40px 10%;
         }
 
-        /* Card Container */
         .card {
-            background: #fff;
-            border: 1px solid #eee;
+            background: white;
             border-radius: 15px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+        .card:hover { transform: scale(1.02); }
 
-        .card h3 {
-            color: #5d2b05;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
+        .card h3 { color: var(--primary-brown); margin-bottom: 15px; }
 
-        /* Media Wrapper (Image & Video) */
-        .media-box {
-            position: relative;
+        /* Video Placeholder (Paused State) */
+        .video-wrapper {
             width: 100%;
-            aspect-ratio: 1 / 1; /* Keeps cards square */
-            overflow: hidden;
+            aspect-ratio: 1/1;
             border-radius: 10px;
-            background: #f9f9f9;
+            overflow: hidden;
+            background: #000;
+            position: relative;
         }
 
-        .media-box img {
+        .video-wrapper video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: opacity 0.4s ease;
+            pointer-events: none; /* Prevents playing in the grid */
         }
 
-        .media-box video {
+        /* Play Icon Overlay */
+        .play-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
         }
 
-        /* Hover States */
-        .card:hover .media-box img { opacity: 0; }
-        .card:hover .media-box video { opacity: 1; }
+        /* --- MODAL (POPUP) STYLES --- */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+        }
 
-        /* Button Styling */
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            background: #000;
+            border-radius: 10px;
+        }
+
+        .modal-content video {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
         .btn {
             display: inline-block;
             margin-top: 15px;
             padding: 10px 25px;
-            background-color: #4a1e05;
+            background: var(--primary-brown);
             color: white;
             text-decoration: none;
             border-radius: 25px;
-            font-weight: bold;
-            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
 <div class="product-grid">
-    <div class="card">
+    <div class="card" onclick="openVideo('../assets/videos/video1.mp4')">
         <h3>For Managing Sugar</h3>
-        <div class="media-box">
-            <img src="../assets/images/Diabeties_img.png" alt="Sugar Support">
-            <video loop playsinline muted>
+        <div class="video-wrapper">
+            <video muted preload="metadata">
                 <source src="../assets/videos/video1.mp4" type="video/mp4">
             </video>
+            <div class="play-overlay">▶</div>
         </div>
-        <a href="#" class="btn">Know More</a>
+        <div class="btn">Know More</div>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="openVideo('../assets/videos/video1.mp4')">
         <h3>For Joint Support</h3>
-        <div class="media-box">
-            <img src="../assets/images/Diabeties_img.png" alt="Joint Support">
-            <video loop playsinline muted>
+        <div class="video-wrapper">
+            <video muted preload="metadata">
                 <source src="../assets/videos/video1.mp4" type="video/mp4">
             </video>
+            <div class="play-overlay">▶</div>
         </div>
-        <a href="#" class="btn">Know More</a>
+        <div class="btn">Know More</div>
     </div>
 
-    <div class="card">
-        <h3>For Healthy Gut</h3>
-        <div class="media-box">
-            <img src="../assets/images/Diabeties_img.png" alt="Healthy Gut">
-            <video loop playsinline muted>
+    <div class="card" onclick="openVideo('../assets/videos/video1.mp4')">
+        <h3>For Joint Support</h3>
+        <div class="video-wrapper">
+            <video muted preload="metadata">
                 <source src="../assets/videos/video1.mp4" type="video/mp4">
             </video>
+            <div class="play-overlay">▶</div>
         </div>
-        <a href="#" class="btn">Know More</a>
+        <div class="btn">Know More</div>
     </div>
 
-    <div class="card">
-        <h3>For Treating Piles</h3>
-        <div class="media-box">
-            <img src="../assets/images/Diabeties_img.png" alt="Piles Treatment">
-            <video loop playsinline muted>
+    <div class="card" onclick="openVideo('../assets/videos/video1.mp4')">
+        <h3>For Joint Support</h3>
+        <div class="video-wrapper">
+            <video muted preload="metadata">
                 <source src="../assets/videos/video1.mp4" type="video/mp4">
             </video>
+            <div class="play-overlay">▶</div>
         </div>
-        <a href="#" class="btn">Know More</a>
+        <div class="btn">Know More</div>
+    </div>
+    
+    </div>
+
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeVideo()">&times;</span>
+        <video id="popupPlayer" controls autoplay>
+            <source src="../assets/videos/video1.mp4" type="video/mp4">
+        </video>
     </div>
 </div>
 
 <script>
-    const cards = document.querySelectorAll('.card');
+    const modal = document.getElementById('videoModal');
+    const popupPlayer = document.getElementById('popupPlayer');
 
-    cards.forEach(card => {
-        const video = card.querySelector('video');
+    function openVideo(videoSrc) {
+        popupPlayer.src = videoSrc;
+        modal.style.display = "flex";
+        popupPlayer.play();
+    }
 
-        card.addEventListener('mouseenter', () => {
-            video.muted = false; // Enable voice
-            video.play().catch(e => console.log("User interaction needed for audio"));
-        });
+    function closeVideo() {
+        modal.style.display = "none";
+        popupPlayer.pause();
+        popupPlayer.src = ""; // Stop loading video
+    }
 
-        card.addEventListener('mouseleave', () => {
-            video.pause();
-            video.currentTime = 0;
-            video.muted = true;
-        });
-    });
+    // Close modal if user clicks outside the video
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeVideo();
+        }
+    }
+</script>
+
+</body>
+</html>
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-brown: #4a1e05;
+            --bg-color: #fcfcfc;
+        }
+
+        body { font-family: sans-serif; background-color: var(--bg-color); margin: 0; padding: 20px; }
+
+        /* Responsive Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid #eee;
+            text-align: center;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+
+        .card h3 { color: var(--primary-brown); font-size: 1.1rem; margin-top: 0; }
+
+        /* Video Container */
+        .video-box {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Maintains a square shape for the card */
+            background: #f0f0f0; /* Light grey background for letterboxing */
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-box video {
+            width: 55%;
+            height: 100%;
+            /* CHANGE: 'contain' shows the FULL video without cropping */
+            object-fit: contain; 
+            background: #000; /* Adds black bars if video isn't square */
+        }
+
+        /* Modal / Popup */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            width: 95%;
+            max-width: 900px;
+            position: relative;
+        }
+
+        .modal-content video {
+            width: 100%;
+            max-height: 80vh; /* Prevents video from going off-screen vertically */
+            display: block;
+            object-fit: contain; /* Ensures full video in popup */
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -50px;
+            right: 10px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .btn1 {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: var(--primary-brown);
+            color: #fff;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-grid">
+    <div class="card" onclick="openPopup('../assets/videos/video1.mp4')">
+        <h3>For Managing Sugar</h3>
+        <div class="video-box">
+            <video muted preload="metadata">
+                <source src="../assets/videos/video1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="btn">Know More</div>
+    </div>
+
+    <div class="card" onclick="openPopup('../assets/videos/video2.mp4')">
+        <h3>For Joint Support</h3>
+        <div class="video-box">
+            <video muted preload="metadata">
+                <source src="../assets/videos/video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="btn">Know More</div>
+    </div>
+
+    <div class="card" onclick="openPopup('../assets/videos/video1.mp4')">
+        <h3>For Managing Sugar</h3>
+        <div class="video-box">
+            <video muted preload="metadata">
+                <source src="../assets/videos/video1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="btn">Know More</div>
+    </div>
+
+    <div class="card" onclick="openPopup('../assets/videos/video2.mp4')">
+        <h3>For Joint Support</h3>
+        <div class="video-box">
+            <video muted preload="metadata">
+                <source src="../assets/videos/video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="btn">Know More</div>
+    </div>
+</div>
+
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <video id="popupVideo" controls autoplay>
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById('videoModal');
+    const popupVideo = document.getElementById('popupVideo');
+
+    function openPopup(src) {
+        popupVideo.src = src;
+        modal.style.display = "flex";
+        popupVideo.play();
+    }
+
+    function closePopup() {
+        modal.style.display = "none";
+        popupVideo.pause();
+        popupVideo.src = "";
+    }
+
+    // Close on background click
+    window.onclick = function(e) {
+        if (e.target == modal) closePopup();
+    }
 </script>
 
 </body>
