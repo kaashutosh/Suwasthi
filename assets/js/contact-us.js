@@ -32,3 +32,10 @@ document.querySelectorAll(".accordion-header").forEach(header => {
         item.classList.toggle("active");
     });
 });
+
+
+
+
+
+
+

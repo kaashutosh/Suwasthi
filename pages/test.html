@@ -1,385 +1,95 @@
-<!--
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powder</title>
     <style>
-        :root {
-            --primary-brown: #4a1e05;
-            --bg-light: #f4f4f4;
-        }
-
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg-light); }
-
-        /* Grid Layout */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 40px 10%;
-        }
-
-        .card {
-            background: white;
-            border-radius: 15px;
+        body {
+            font-family: Arial, sans-serif;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-            cursor: pointer;
-            transition: transform 0.3s ease;
         }
 
-        .card:hover { transform: scale(1.02); }
-
-        .card h3 { color: var(--primary-brown); margin-bottom: 15px; }
-
-        /* Video Placeholder (Paused State) */
-        .video-wrapper {
-            width: 100%;
-            aspect-ratio: 1/1;
-            border-radius: 10px;
-            overflow: hidden;
-            background: #000;
-            position: relative;
-        }
-
-        .video-wrapper video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none; /* Prevents playing in the grid */
-        }
-
-        /* Play Icon Overlay */
-        .play-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0,0,0,0.5);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-        }
-
-        /* --- MODAL (POPUP) STYLES --- */
-        .modal {
-            display: none; 
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            position: relative;
+        input,
+        select {
             width: 90%;
-            max-width: 800px;
-            background: #000;
-            border-radius: 10px;
+            padding: 12px;
+            margin: 6px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
         }
 
-        .modal-content video {
-            width: 100%;
-            display: block;
-            border-radius: 10px;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
+        .priceBox {
+            font-size: 22px;
             font-weight: bold;
+            margin-top: 10px;
         }
 
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 25px;
-            background: var(--primary-brown);
+        button {
+            width: 90%;
+            background: #28a745;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
             color: white;
-            text-decoration: none;
-            border-radius: 25px;
-        }
-    </style>
-</head>
-<body>
-
-<div class="product-grid">
-    <div class="card" onclick="openVideo('../assets/videos/video1.mp4')">
-        <h3>For Managing Sugar</h3>
-        <div class="video-wrapper">
-            <video muted preload="metadata">
-                <source src="../assets/videos/video1.mp4" type="video/mp4">
-            </video>
-            <div class="play-overlay">▶</div>
-        </div>
-        <div class="btn">Know More</div>
-    </div>
-
-    <div class="card" onclick="openVideo('../assets/videos/video1.mp4')">
-        <h3>For Joint Support</h3>
-        <div class="video-wrapper">
-            <video muted preload="metadata">
-                <source src="../assets/videos/video1.mp4" type="video/mp4">
-            </video>
-            <div class="play-overlay">▶</div>
-        </div>
-        <div class="btn">Know More</div>
-    </div>
-
-    <div class="card" onclick="openVideo('../assets/videos/video1.mp4')">
-        <h3>For Joint Support</h3>
-        <div class="video-wrapper">
-            <video muted preload="metadata">
-                <source src="../assets/videos/video1.mp4" type="video/mp4">
-            </video>
-            <div class="play-overlay">▶</div>
-        </div>
-        <div class="btn">Know More</div>
-    </div>
-
-    <div class="card" onclick="openVideo('../assets/videos/video1.mp4')">
-        <h3>For Joint Support</h3>
-        <div class="video-wrapper">
-            <video muted preload="metadata">
-                <source src="../assets/videos/video1.mp4" type="video/mp4">
-            </video>
-            <div class="play-overlay">▶</div>
-        </div>
-        <div class="btn">Know More</div>
-    </div>
-    
-    </div>
-
-<div id="videoModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeVideo()">&times;</span>
-        <video id="popupPlayer" controls autoplay>
-            <source src="../assets/videos/video1.mp4" type="video/mp4">
-        </video>
-    </div>
-</div>
-
-<script>
-    const modal = document.getElementById('videoModal');
-    const popupPlayer = document.getElementById('popupPlayer');
-
-    function openVideo(videoSrc) {
-        popupPlayer.src = videoSrc;
-        modal.style.display = "flex";
-        popupPlayer.play();
-    }
-
-    function closeVideo() {
-        modal.style.display = "none";
-        popupPlayer.pause();
-        popupPlayer.src = ""; // Stop loading video
-    }
-
-    // Close modal if user clicks outside the video
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            closeVideo();
-        }
-    }
-</script>
-
-</body>
-</html>
-
--->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        :root {
-            --primary-brown: #4a1e05;
-            --bg-color: #fcfcfc;
-        }
-
-        body { font-family: sans-serif; background-color: var(--bg-color); margin: 0; padding: 20px; }
-
-        /* Responsive Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 15px;
-            border: 1px solid #eee;
-            text-align: center;
             cursor: pointer;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-
-        .card h3 { color: var(--primary-brown); font-size: 1.1rem; margin-top: 0; }
-
-        /* Video Container */
-        .video-box {
-            width: 100%;
-            aspect-ratio: 1 / 1; /* Maintains a square shape for the card */
-            background: #f0f0f0; /* Light grey background for letterboxing */
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .video-box video {
-            width: 55%;
-            height: 100%;
-            /* CHANGE: 'contain' shows the FULL video without cropping */
-            object-fit: contain; 
-            background: #000; /* Adds black bars if video isn't square */
-        }
-
-        /* Modal / Popup */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 999;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            width: 95%;
-            max-width: 900px;
-            position: relative;
-        }
-
-        .modal-content video {
-            width: 100%;
-            max-height: 80vh; /* Prevents video from going off-screen vertically */
-            display: block;
-            object-fit: contain; /* Ensures full video in popup */
-        }
-
-        .close-btn {
-            position: absolute;
-            top: -50px;
-            right: 10px;
-            color: #fff;
-            font-size: 40px;
-            cursor: pointer;
-        }
-
-        .btn1 {
-            display: inline-block;
             margin-top: 15px;
-            padding: 8px 20px;
-            background: var(--primary-brown);
-            color: #fff;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 14px;
+        }
+
+        button:hover {
+            background: #1e7b32;
         }
     </style>
 </head>
+
 <body>
 
-<div class="product-grid">
-    <div class="card" onclick="openPopup('../assets/videos/video1.mp4')">
-        <h3>For Managing Sugar</h3>
-        <div class="video-box">
-            <video muted preload="metadata">
-                <source src="../assets/videos/video1.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="btn">Know More</div>
-    </div>
+    <img src="yourImage.png" width="380" style="border-radius:10px;">
 
-    <div class="card" onclick="openPopup('../assets/videos/video2.mp4')">
-        <h3>For Joint Support</h3>
-        <div class="video-box">
-            <video muted preload="metadata">
-                <source src="../assets/videos/video2.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="btn">Know More</div>
-    </div>
+    <h2>Diabutose Herbal Powder</h2>
 
-    <div class="card" onclick="openPopup('../assets/videos/video1.mp4')">
-        <h3>For Managing Sugar</h3>
-        <div class="video-box">
-            <video muted preload="metadata">
-                <source src="../assets/videos/video1.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="btn">Know More</div>
-    </div>
+    <div class="priceBox">Price: Rs <span id="price">1699</span></div>
 
-    <div class="card" onclick="openPopup('../assets/videos/video2.mp4')">
-        <h3>For Joint Support</h3>
-        <div class="video-box">
-            <video muted preload="metadata">
-                <source src="../assets/videos/video2.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="btn">Know More</div>
-    </div>
-</div>
+    <br>
 
-<div id="videoModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
-        <video id="popupVideo" controls autoplay>
-            <source src="" type="video/mp4">
-        </video>
-    </div>
-</div>
+    <!-- Quantity Selector -->
+    <select id="qty" onchange="updatePrice()">
+        <option value="1">1 Item</option>
+        <option value="2">2 Items</option>
+        <option value="3">3 Items</option>
+        <option value="4">4 Items</option>
+        <option value="5">5 Items</option>
+    </select>
 
-<script>
-    const modal = document.getElementById('videoModal');
-    const popupVideo = document.getElementById('popupVideo');
+    <!-- Add to Cart -->
+    <button onclick="addToCart()">Add to Cart</button>
 
-    function openPopup(src) {
-        popupVideo.src = src;
-        modal.style.display = "flex";
-        popupVideo.play();
-    }
+    <br><br>
 
-    function closePopup() {
-        modal.style.display = "none";
-        popupVideo.pause();
-        popupVideo.src = "";
-    }
+    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="Last Name">
+    <input type="email" placeholder="Email">
+    <input type="text" placeholder="Phone Number">
+    <input type="text" placeholder="House no / Plot no / Full Address">
 
-    // Close on background click
-    window.onclick = function(e) {
-        if (e.target == modal) closePopup();
-    }
-</script>
+    <script>
+        const basePrice = 1699;
+
+        function updatePrice() {
+            let qty = document.getElementById('qty').value;
+            let total = basePrice * qty;
+            document.getElementById('price').innerText = total;
+        }
+
+        function addToCart() {
+            let qty = document.getElementById('qty').value;
+            let total = basePrice * qty;
+            alert(qty + " item(s) added to cart. Total: Rs " + total);
+        }
+    </script>
 
 </body>
+
 </html>

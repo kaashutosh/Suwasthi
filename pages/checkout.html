@@ -52,6 +52,8 @@
             font-size: 18px;
             cursor: pointer;
         }
+
+    
     </style>
 </head>
 
@@ -64,6 +66,18 @@
             <h2 id="pName"></h2>
             <h3>Price: Rs <span id="pPrice"></span></h3>
         </div>
+        <div class="priceBox">Price: Rs <span id="price">1699</span></div>
+
+        <br>
+
+        <!-- Quantity Selector -->
+        <select id="qty" style="width: 100%;padding: 12px;" onchange="updatePrice()">
+            <option value="1">1 Item</option>
+            <option value="2">2 Items</option>
+            <option value="3">3 Items</option>
+            <option value="4">4 Items</option>
+            <option value="5">5 Items</option>
+        </select>
 
         <form id="orderForm">
             <input name="fname" placeholder="First Name" required>
@@ -97,7 +111,24 @@
                 body: data
             }).then(() => alert("Order Submitted Successfully!"));
         });
+
+
+        const basePrice = 1699;
+
+    function updatePrice() {
+        let qty = document.getElementById('qty').value;
+        let total = basePrice * qty;
+        document.getElementById('price').innerText = total;
+    }
+
+    function addToCart() {
+        let qty = document.getElementById('qty').value;
+        let total = basePrice * qty;
+        alert(qty + " item(s) added to cart. Total: Rs " + total);
+    }
     </script>
+
+    
 
 </body>
 
