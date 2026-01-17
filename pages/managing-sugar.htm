@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Video Popup</title>
+
+<style>
+body{
+    font-family: Arial;
+    display:flex;
+    justify-content:center;
+    padding:30px;
+    background:#f4f4f4;
+}
+.card{
+    width:300px;
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+.btn{
+    background:#4a1d00;
+    color:white;
+    padding:12px 18px;
+    border:none;
+    border-radius:30px;
+    margin-top:15px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* VIDEO POPUP */
+.overlay{
+    position:fixed;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.75);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+.video-box{
+    width:100%;
+    max-width:700px;
+    background:#000;
+    border-radius:10px;
+    overflow:hidden;
+    position:relative;
+}
+.close{
+    position:absolute;
+    right:10px;
+    top:10px;
+    font-size:24px;
+    color:white;
+    cursor:pointer;
+}
+video{
+    width:100%;
+    height:auto;
+}
+@media(max-width:500px){
+    .card{ width:100%; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h3>For Managing Sugar</h3>
+    <img src="../assets/images/Diabeties_img.png">
+    <button class="btn" onclick="openVideo()">Know More</button>
+</div>
+
+
+<!-- Video Modal -->
+<div class="overlay" id="overlay">
+    <div class="video-box">
+        <span class="close" onclick="closeVideo()">×</span>
+        <video id="demoVideo" controls>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+
+<script>
+function openVideo(){
+    document.getElementById('overlay').style.display='flex';
+}
+
+function closeVideo(){
+    document.getElementById('overlay').style.display='none';
+    document.getElementById('demoVideo').pause();
+}
+</script>
+
+</body>
+</html>
