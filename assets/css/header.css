@@ -194,6 +194,21 @@
     }
 }
     */
+    .brand{
+  font-size: 40px;
+  font-weight: bold;
+ /* background: linear-gradient(90deg, rgb(56, 16, 16), rgb(55, 38, 6), rgba(112, 112, 44, 0.949), rgb(24, 120, 24), blue, rgb(137, 16, 223), rgb(255, 29, 255));*/
+ background: linear-gradient(90deg, blue, rgb(46, 9, 15),green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+    .brand {
+        
+        font-size: 20px;
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
     :root {
     /*--bg-color: #2d1611;
     --text-color: #f1e4d8;
@@ -337,7 +352,8 @@ body {
 }
 .brand {
     margin-top: 110px;
-    margin-left: -85px;
+    margin-left: -110px;
+    font-size: 30px;
 }
 /* --- MOBILE RESPONSIVE LAYOUT --- */
 @media (max-width: 768px) {
@@ -363,8 +379,9 @@ body {
         justify-self: center; 
     }
     .brand {
-        margin-top: 60px;
-    margin-left: -60px;
+        margin-top: 110px;
+    margin-left: -110px;
+    font-size: 30px;
         grid-area: logo; 
         justify-self: center;
     }
@@ -378,7 +395,7 @@ body {
     }
 
     .logo img { 
-        height: 50px; 
+        height: 100px; 
     }
     .account-btn { 
         padding: 5px 12px; 
