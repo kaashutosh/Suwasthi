@@ -84,3 +84,4 @@ const cards = document.querySelectorAll('.card');
     window.onclick = function(e) {
         if (e.target == modal) closePopup();
     }
+        

@@ -351,8 +351,9 @@ body {
     display: block; 
 }
 .brand {
+    text-align: center;
     margin-top: 110px;
-    margin-left: -110px;
+    margin-left: -145px;
     font-size: 30px;
 }
 /* --- MOBILE RESPONSIVE LAYOUT --- */
