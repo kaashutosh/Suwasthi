@@ -358,7 +358,7 @@ body {
     font-size: 30px;
 }
 /* --- MOBILE RESPONSIVE LAYOUT --- */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .header-grid-container {
         display: grid;
         grid-template-areas: 
