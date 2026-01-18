@@ -1,3 +1,6 @@
+
+
+/*
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +14,7 @@
     width: 100%;
 }
 
-/* TOP ROW DESKTOP */
+/* TOP ROW DESKTOP *
 .header-top {
     display: flex;
     justify-content: space-between;
@@ -36,7 +39,7 @@
     color: #d6c39a;
 }
 
-/* SEARCH */
+/* SEARCH *
 .search-box {
     width: 70%;
     margin: auto;
@@ -61,7 +64,7 @@
     opacity: 0.8;
 }
 
-/* ACCOUNT BUTTON (DESKTOP) */
+/* ACCOUNT BUTTON (DESKTOP) *
 .desktop-account {
     display: flex;
     align-items: center;
@@ -74,7 +77,7 @@
     cursor: pointer;
 }
 
-/* MOBILE ACCOUNT ICON */
+/* MOBILE ACCOUNT ICON *
 .mobile-account {
     display: none;
     background: none;
@@ -83,7 +86,7 @@
     cursor: pointer;
 }
 
-/* NAVBAR */
+/* NAVBAR *
 .navbar {
     padding: 12px 30px;
 }
@@ -101,7 +104,7 @@
     font-weight: 500;
 }
 
-/* DROPDOWN */
+/* DROPDOWN *
 .dropdown {
     position: relative;
 }
@@ -126,7 +129,7 @@
     display: block;
 }
 
-/* HAMBURGER MOBILE */
+/* HAMBURGER MOBILE *
 .mobile-menu {
     display: none;
     font-size: 28px;
@@ -188,6 +191,220 @@
 
     .dropdown.active .dropdown-menu {
         display: block;
+    }
+}
+    */
+    :root {
+    /*--bg-color: #2d1611;
+    --text-color: #f1e4d8;
+    --input-bg: #3d211a;
+    */
+    --bg-color: hsl(22, 100%, 51%);
+    --text-color: #f1e4d8;
+    --input-bg: hsl(22, 100%, 51%);
+
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: sans-serif; 
+}
+
+body { 
+    background-color: #f4f4f4; 
+}
+
+.main-header {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 15px 0;
+}
+
+.header-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Desktop: Logo Left, Search Middle, Account Right */
+}
+
+/* Desktop Element Sizing */
+.logo { 
+    flex: 1; 
+    display: flex; 
+    justify-content: flex-start; 
+}
+.logo img { 
+    height: 100px; 
+    border-radius: 50%;
+}
+
+.search-container { 
+    flex: 2; 
+    margin: 0 20px; 
+}
+.search-box {
+    position: relative; 
+    background: var(--input-bg);
+    border-radius: 25px; 
+    padding: 10px; 
+    border: 1px solid #4e2f27;
+}
+.search-box input {
+    width: 100%; 
+    background: transparent; 
+    border: none;
+    color: white; 
+    padding: 0 40px; 
+    outline: none;
+}
+.search-icon-left { 
+    position: absolute; 
+    left: 15px; top: 12px; 
+    color: #888; 
+}
+.search-icon-right { 
+    position: absolute; 
+    right: 15px; 
+    top: 12px; 
+    color: #888; 
+}
+
+.account-wrapper { 
+    flex: 1; 
+    display: flex; 
+    justify-content: flex-end; 
+}
+.account-btn {
+    background: white; 
+    color: black;
+    padding: 8px 18px; 
+    border-radius: 25px;
+    text-decoration: none; 
+    font-weight: bold;
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+}
+
+.mobile-nav-toggle { 
+    display: none; 
+    cursor: pointer; 
+    font-size: 24px; 
+}
+
+/* Desktop Navbar */
+.navbar { 
+    background-color: hsl(22, 100%, 51%);
+    border-top: 1px solid #d3a69a; 
+    margin-top: 15px; 
+    padding-top: 20px; 
+}
+.nav-links { 
+    margin-top: 10px;
+    display: flex; 
+    justify-content: center; 
+    list-style: none; 
+    gap: 30px; 
+}
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--text-color); 
+    font-weight: 500; 
+}
+
+/* Dropdown */
+.dropdown { 
+    position: relative; 
+}
+.dropdown-content {
+    display: none; 
+    position: absolute; 
+    background: var(--input-bg);
+    min-width: 180px; 
+    top: 100%; z-index: 10; 
+    padding: 10px;
+}
+.dropdown-content li { 
+    list-style: none; 
+    padding: 8px 0; 
+}
+.dropdown:hover .dropdown-content { 
+    display: block; 
+}
+.brand {
+    margin-top: 110px;
+    margin-left: -85px;
+}
+/* --- MOBILE RESPONSIVE LAYOUT --- */
+@media (max-width: 768px) {
+    .header-grid-container {
+        display: grid;
+        grid-template-areas: 
+            "empty logo account"
+            "menu logo account" /* Adjusting for center logo */
+            "search search search";
+        grid-template-columns: 1fr 2fr 1fr; /* Center logo gets more space */
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* Redefining grid areas */
+    .mobile-nav-toggle { 
+        grid-area: menu; 
+        display: block; 
+        justify-self: start; 
+    }
+    .logo { 
+        grid-area: logo; 
+        justify-self: center; 
+    }
+    .brand {
+        margin-top: 60px;
+    margin-left: -60px;
+        grid-area: logo; 
+        justify-self: center;
+    }
+    .account-wrapper { 
+        grid-area: account; 
+        justify-self: end; 
+    }
+    .search-container { 
+        grid-area: search; 
+        margin: 0; 
+    }
+
+    .logo img { 
+        height: 50px; 
+    }
+    .account-btn { 
+        padding: 5px 12px; 
+        font-size: 13px; 
+    }
+
+    /* Mobile Navbar (Drawer) */
+    .navbar {
+        display: none; /* Controlled by JS */
+        position: absolute; 
+        width: 100%; left: 0;
+        background: var(--bg-color); 
+        z-index: 100; 
+        padding: 20px;
+    }
+    .navbar.active { 
+        display: block; 
+    }
+    .nav-links { 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    .dropdown-content { 
+        position: static; 
+        display: none; 
+        padding-left: 20px; 
     }
 }
 

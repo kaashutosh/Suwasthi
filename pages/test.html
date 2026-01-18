@@ -1,3 +1,4 @@
+<!---
 <!DOCTYPE html>
 <html>
 
@@ -54,7 +55,7 @@
 
     <br>
 
-    <!-- Quantity Selector -->
+    <!-- Quantity Selector --
     <select id="qty" onchange="updatePrice()">
         <option value="1">1 Item</option>
         <option value="2">2 Items</option>
@@ -63,7 +64,7 @@
         <option value="5">5 Items</option>
     </select>
 
-    <!-- Add to Cart -->
+    <!-- Add to Cart --
     <button onclick="addToCart()">Add to Cart</button>
 
     <br><br>
@@ -92,4 +93,184 @@
 
 </body>
 
+</html>
+
+
+--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suwasthi Responsive Header</title>
+    <link rel="stylesheet" href="style111.css">
+    <style>
+        :root {
+    --bg-color: #2d1611;
+    --text-color: #f1e4d8;
+    --input-bg: #3d211a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+
+body { background-color: #f4f4f4; }
+
+.main-header {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 15px 0;
+}
+
+.header-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Desktop: Logo Left, Search Middle, Account Right */
+}
+
+/* Desktop Element Sizing */
+.logo { flex: 1; display: flex; justify-content: flex-start; }
+.logo img { height: 60px; }
+
+.search-container { flex: 2; margin: 0 20px; }
+.search-box {
+    position: relative; background: var(--input-bg);
+    border-radius: 25px; padding: 10px; border: 1px solid #4e2f27;
+}
+.search-box input {
+    width: 100%; background: transparent; border: none;
+    color: white; padding: 0 40px; outline: none;
+}
+.search-icon-left { position: absolute; left: 15px; top: 12px; color: #888; }
+.search-icon-right { position: absolute; right: 15px; top: 12px; color: #888; }
+
+.account-wrapper { flex: 1; display: flex; justify-content: flex-end; }
+.account-btn {
+    background: white; color: black;
+    padding: 8px 18px; border-radius: 25px;
+    text-decoration: none; font-weight: bold;
+    display: flex; align-items: center; gap: 8px;
+}
+
+.mobile-nav-toggle { display: none; cursor: pointer; font-size: 24px; }
+
+/* Desktop Navbar */
+.navbar { border-top: 1px solid #4e2f27; margin-top: 15px; padding-top: 10px; }
+.nav-links { display: flex; justify-content: center; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; }
+
+/* Dropdown */
+.dropdown { position: relative; }
+.dropdown-content {
+    display: none; position: absolute; background: var(--input-bg);
+    min-width: 180px; top: 100%; z-index: 10; padding: 10px;
+}
+.dropdown-content li { list-style: none; padding: 8px 0; }
+.dropdown:hover .dropdown-content { display: block; }
+
+/* --- MOBILE RESPONSIVE LAYOUT --- */
+@media (max-width: 768px) {
+    .header-grid-container {
+        display: grid;
+        grid-template-areas: 
+            "empty logo account"
+            "menu logo account" /* Adjusting for center logo */
+            "search search search";
+        grid-template-columns: 1fr 2fr 1fr; /* Center logo gets more space */
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* Redefining grid areas */
+    .mobile-nav-toggle { grid-area: menu; display: block; justify-self: start; }
+    .logo { grid-area: logo; justify-self: center; }
+    .account-wrapper { grid-area: account; justify-self: end; }
+    .search-container { grid-area: search; margin: 0; }
+
+    .logo img { height: 50px; }
+    .account-btn { padding: 5px 12px; font-size: 13px; }
+
+    /* Mobile Navbar (Drawer) */
+    .navbar {
+        display: none; /* Controlled by JS */
+        position: absolute; width: 100%; left: 0;
+        background: var(--bg-color); z-index: 100; padding: 20px;
+    }
+    .navbar.active { display: block; }
+    .nav-links { flex-direction: column; gap: 15px; }
+    .dropdown-content { position: static; display: none; padding-left: 20px; }
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-grid-container">
+        
+        <div class="mobile-nav-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="logo">
+            <img src="https://suwasthi.com/cdn/shop/files/Logo_Final_300x.png" alt="Suwasthi Logo">
+        </div>
+
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+                <input type="text" placeholder="Search for...">
+                <i class="fa-solid fa-magnifying-glass search-icon-right"></i>
+            </div>
+        </div>
+
+        <div class="account-wrapper">
+            <a href="https://wa.me/91XXXXXXXXXX" class="account-btn">
+                <i class="fa-regular fa-user"></i> Account
+            </a>
+        </div>
+    </div>
+
+    <nav class="navbar" id="main-nav">
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="nav-item">Diabetes Support <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Sugar Care</a></li>
+                    <li><a href="#">Diet Control</a></li>
+                    <li><a href="#">Ayurvedic Mix</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="nav-item">Joint Care</a></li>
+            <li><a href="#" class="nav-item">Piles Relief</a></li>
+            <li><a href="#" class="nav-item">Research Publications</a></li>
+        </ul>
+    </nav>
+</header>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navBar = document.getElementById('main-nav');
+    const dropdown = document.querySelector('.dropdown');
+
+    // Toggle Mobile Navbar
+    menuToggle.addEventListener('click', () => {
+        navBar.classList.toggle('active');
+    });
+
+    // Toggle Dropdown for Mobile (click instead of hover)
+    dropdown.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            const content = dropdown.querySelector('.dropdown-content');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            e.stopPropagation();
+        }
+    });
+});
+</script>
+
+<script src="script111.js"></script>
+</body>
 </html>
