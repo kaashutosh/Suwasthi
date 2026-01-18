@@ -341,16 +341,33 @@ body{
     margin:0 auto;
     grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
 }
-
+/*
 .item{
     text-align:center;
 }
 
 .item img{
+    
     width:110px;
     height:110px;
     border-radius:50%;
-    object-fit:cover;
+    /*object-fit:cover;*
+    align-items: center;
+    text-align: center;
+} */
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.item img {
+    width:110px;
+    height:110px;
+    border-radius:50%;
 }
 
 .item p{

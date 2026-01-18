@@ -108,3 +108,30 @@
 @media (max-width: 600px) {
     .vvip-left, .vvip-right { width: 90%; }
 }
+
+
+/*      sitemap     */
+.sitemap-section{
+    text-align:center;
+    padding:40px 20px;
+    background:#f8f8f8;
+    margin-top:40px;
+}
+
+.sitemap-section h3{
+    font-size:24px;
+    font-weight:600;
+    color:#3e024b;
+    margin-bottom:12px;
+}
+
+.sitemap-section .links{
+    margin-top:5px;
+}
+
+.sitemap-section .links a{
+    text-decoration:none;
+    font-size:18px;
+    color:#b57a3a;
+    font-weight:500;
+}
