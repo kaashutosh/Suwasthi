@@ -1,334 +1,100 @@
-<!---
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Powder</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            text-align: center;
-        }
-
-        input,
-        select {
-            width: 90%;
-            padding: 12px;
-            margin: 6px 0;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 16px;
-        }
-
-        .priceBox {
-            font-size: 22px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        button {
-            width: 90%;
-            background: #28a745;
-            padding: 14px;
-            border: none;
-            border-radius: 6px;
-            font-size: 18px;
-            color: white;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-
-        button:hover {
-            background: #1e7b32;
-        }
-    </style>
-</head>
-
-<body>
-
-    <img src="yourImage.png" width="380" style="border-radius:10px;">
-
-    <h2>Diabutose Herbal Powder</h2>
-
-    <div class="priceBox">Price: Rs <span id="price">1699</span></div>
-
-    <br>
-
-    <!-- Quantity Selector --
-    <select id="qty" onchange="updatePrice()">
-        <option value="1">1 Item</option>
-        <option value="2">2 Items</option>
-        <option value="3">3 Items</option>
-        <option value="4">4 Items</option>
-        <option value="5">5 Items</option>
-    </select>
-
-    <!-- Add to Cart --
-    <button onclick="addToCart()">Add to Cart</button>
-
-    <br><br>
-
-    <input type="text" placeholder="First Name">
-    <input type="text" placeholder="Last Name">
-    <input type="email" placeholder="Email">
-    <input type="text" placeholder="Phone Number">
-    <input type="text" placeholder="House no / Plot no / Full Address">
-
-    <script>
-        const basePrice = 1699;
-
-        function updatePrice() {
-            let qty = document.getElementById('qty').value;
-            let total = basePrice * qty;
-            document.getElementById('price').innerText = total;
-        }
-
-        function addToCart() {
-            let qty = document.getElementById('qty').value;
-            let total = basePrice * qty;
-            alert(qty + " item(s) added to cart. Total: Rs " + total);
-        }
-    </script>
-
-</body>
-
-</html>
-
-
---->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suwasthi Responsive Header</title>
-    <link rel="stylesheet" href="style111.css">
-    <style>
-        :root {
-    --bg-color: #2d1611;
-    --text-color: #f1e4d8;
-    --input-bg: #3d211a;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Solutions Section</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
-
-body { background-color: #f4f4f4; }
-
-.main-header {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    padding: 15px 0;
+/* Section container */
+.solutions-we-found {
+    padding: 60px 8%;
+    text-align: center;
 }
 
-.header-grid-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Title */
+.solutions-we-found h2 {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 45px;
+}
+
+/* Cards Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+/* Card */
+.card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Desktop: Logo Left, Search Middle, Account Right */
 }
 
-/* Desktop Element Sizing */
-.logo { flex: 1; display: flex; justify-content: flex-start; }
-.logo img { height: 60px; }
-
-.search-container { flex: 2; margin: 0 20px; }
-.search-box {
-    position: relative; background: var(--input-bg);
-    border-radius: 25px; padding: 10px; border: 1px solid #4e2f27;
-}
-.search-box input {
-    width: 100%; background: transparent; border: none;
-    color: white; padding: 0 40px; outline: none;
-}
-.search-icon-left { position: absolute; left: 15px; top: 12px; color: #888; }
-.search-icon-right { position: absolute; right: 15px; top: 12px; color: #888; }
-
-.account-wrapper { flex: 1; display: flex; justify-content: flex-end; }
-.account-btn {
-    background: white; color: black;
-    padding: 8px 18px; border-radius: 25px;
-    text-decoration: none; font-weight: bold;
-    display: flex; align-items: center; gap: 8px;
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 14px;
 }
 
-.mobile-nav-toggle { display: none; cursor: pointer; font-size: 24px; }
-
-/* Desktop Navbar */
-.navbar { border-top: 1px solid #4e2f27; margin-top: 15px; padding-top: 10px; }
-.nav-links { display: flex; justify-content: center; list-style: none; gap: 30px; }
-.nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; }
-
-/* Dropdown */
-.dropdown { position: relative; }
-.dropdown-content {
-    display: none; position: absolute; background: var(--input-bg);
-    min-width: 180px; top: 100%; z-index: 10; padding: 10px;
+.card p {
+    font-size: 16px;
+    font-weight: 800;
+    margin-top: 12px;
 }
-.dropdown-content li { list-style: none; padding: 8px 0; }
-.dropdown:hover .dropdown-content { display: block; }
 
-/* --- MOBILE RESPONSIVE LAYOUT --- */
-@media (max-width: 768px) {
-    .header-grid-container {
-        display: grid;
-        grid-template-areas: 
-            "empty logo account"
-            "menu logo account" /* Adjusting for center logo */
-            "search search search";
-        grid-template-columns: 1fr 2fr 1fr; /* Center logo gets more space */
-        gap: 15px;
-        align-items: center;
+/* RESPONSIVE */
+@media(max-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 560px) {
+    .grid {
+        grid-template-columns: 1fr;
     }
 
-    /* Redefining grid areas */
-    .mobile-nav-toggle { grid-area: menu; display: block; justify-self: start; }
-    .logo { grid-area: logo; justify-self: center; }
-    .account-wrapper { grid-area: account; justify-self: end; }
-    .search-container { grid-area: search; margin: 0; }
-
-    .logo img { height: 50px; }
-    .account-btn { padding: 5px 12px; font-size: 13px; }
-
-    /* Mobile Navbar (Drawer) */
-    .navbar {
-        display: none; /* Controlled by JS */
-        position: absolute; width: 100%; left: 0;
-        background: var(--bg-color); z-index: 100; padding: 20px;
+    .solutions h2 {
+        font-size: 28px;
     }
-    .navbar.active { display: block; }
-    .nav-links { flex-direction: column; gap: 15px; }
-    .dropdown-content { position: static; display: none; padding-left: 20px; }
+
+    .card img {
+        height: 240px;
+    }
 }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</style>
 </head>
 <body>
 
-<header class="main-header">
-    <div class="header-grid-container">
-        
-        <div class="mobile-nav-toggle" id="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+<div class="solutions-we-found">
+    <h2>We've Found Solutions That Actually<br>Make Sense.</h2>
 
-        <div class="logo">
-            <img src="https://suwasthi.com/cdn/shop/files/Logo_Final_300x.png" alt="Suwasthi Logo">
+    <div class="grid">
+        <div class="card">
+            <img src="diabetic.jpg" alt="">
+            <p>DIABETIC CARE</p>
         </div>
-
-        <div class="search-container">
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
-                <input type="text" placeholder="Search for...">
-                <i class="fa-solid fa-magnifying-glass search-icon-right"></i>
-            </div>
+        <div class="card">
+            <img src="mens.jpg" alt="">
+            <p>MEN'S HEALTH</p>
         </div>
-
-        <div class="account-wrapper">
-            <a href="https://wa.me/91XXXXXXXXXX" class="account-btn">
-                <i class="fa-regular fa-user"></i> Account
-            </a>
+        <div class="card">
+            <img src="energy.jpg" alt="">
+            <p>ENERGY BOOSTERS</p>
+        </div>
+        <div class="card">
+            <img src="digestive.jpg" alt="">
+            <p>DIGESTIVE HEALTH</p>
         </div>
     </div>
-
-    <nav class="navbar" id="main-nav">
-        <ul class="nav-links">
-            <li class="dropdown">
-                <a href="#" class="nav-item">Diabetes Support <i class="fa-solid fa-chevron-down"></i></a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Sugar Care</a></li>
-                    <li><a href="#">Diet Control</a></li>
-                    <li><a href="#">Ayurvedic Mix</a></li>
-                </ul>
-            </li>
-            <li><a href="#" class="nav-item">Joint Care</a></li>
-            <li><a href="#" class="nav-item">Piles Relief</a></li>
-            <li><a href="#" class="nav-item">Research Publications</a></li>
-        </ul>
-    </nav>
-</header>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const navBar = document.getElementById('main-nav');
-    const dropdown = document.querySelector('.dropdown');
-
-    // Toggle Mobile Navbar
-    menuToggle.addEventListener('click', () => {
-        navBar.classList.toggle('active');
-    });
-
-    // Toggle Dropdown for Mobile (click instead of hover)
-    dropdown.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-            const content = dropdown.querySelector('.dropdown-content');
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            e.stopPropagation();
-        }
-    });
-});
-</script>
-
-<script src="script111.js"></script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="sitemap-section">
-
-        <h3>Sitemap</h3>
-        <div class="links">
-            <a href="../index.html">Home</a>
-        </div>
-
-    </section>
-
-    
-
-    .sitemap-section{
-    text-align:center;
-    padding:40px 20px;
-    background:#f8f8f8;
-    margin-top:40px;
-}
-
-.sitemap-section h3{
-    font-size:24px;
-    font-weight:600;
-    color:#3e024b;
-    margin-bottom:12px;
-}
-
-.sitemap-section .links{
-    margin-top:5px;
-}
-
-.sitemap-section .links a{
-    text-decoration:none;
-    font-size:18px;
-    color:#b57a3a;
-    font-weight:500;
-}
+</div>

@@ -84,4 +84,43 @@ const cards = document.querySelectorAll('.card');
     window.onclick = function(e) {
         if (e.target == modal) closePopup();
     }
+
+
+
+    //     stats section
+
+    function animateNumbers() {
+    const stats = document.querySelectorAll('.stat-number');
+
+    stats.forEach(stat => {
+        const target = +stat.getAttribute('data-target');
+        const isDecimal = stat.getAttribute('data-decimal');
+        let count = 0;
+        const speed = 200;
+
+        const update = () => {
+            if (count < target) {
+                count += isDecimal ? 0.1 : Math.ceil(target / speed);
+                if (count > target) count = target;
+
+                stat.innerText = isDecimal ? count.toFixed(1) : count.toLocaleString();
+                requestAnimationFrame(update);
+            }
+        };
+        update();
+    });
+}
+
+// Trigger only once on scroll
+let started = false;
+const section = document.getElementById('stats');
+const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !started) {
+        started = true;
+        animateNumbers();
+    }
+}, { threshold: 0.4 });
+
+observer.observe(section);
+
         

@@ -1,214 +1,17 @@
 
-
-/*
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-.s-header {
-    background: hsl(22, 100%, 51%);
-    color: #fff;
-    width: 100%;
-}
-
-/* TOP ROW DESKTOP *
-.header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 30px;
-}
-
-.logo-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo {
-    width: 100px;
-    border-radius: 50%;
-}
-
-.brand {
-    font-size: 22px;
-    margin-top: 4px;
-    color: #d6c39a;
-}
-
-/* SEARCH *
-.search-box {
-    width: 70%;
+.brand {  
+    flex: 1; 
+    display: flex; 
+    justify-content: flex-start; 
     margin: auto;
-    padding: 12px 20px;
-    background: #ffffff;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-}
-
-.search-box input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    color: #fff;
-}
-
-.search-icon {
-    margin-right: 10px;
-    opacity: 0.8;
-}
-
-/* ACCOUNT BUTTON (DESKTOP) *
-.desktop-account {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    border: 1px solid #fff;
-    background: transparent;
-    padding: 10px 24px;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* MOBILE ACCOUNT ICON *
-.mobile-account {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-}
-
-/* NAVBAR *
-.navbar {
-    padding: 12px 30px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: #fff;
-    font-size: 16px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-/* DROPDOWN *
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 24px;
-    left: 0;
-    display: none;
-    background: #4c2619;
-    padding: 8px 0;
-    border-radius: 4px;
-    min-width: 200px;
-}
-
-.dropdown-menu a {
-    padding: 10px 18px;
-    display: block;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* HAMBURGER MOBILE *
-.mobile-menu {
-    display: none;
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-}
-@media (max-width: 768px) {
-
-    .mobile-menu {
-        display: block;
-    }
-
-    .desktop-account {
-        display: none;
-    }
-
-    .mobile-account {
-        display: block;
-    }
-
-    .logo-box {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .header-top {
-        position: relative;
-    }
-
-    .search-box {
-        width: 95%;
-        margin-top: 10px;
-    }
-
-    .navbar {
-        padding: 0;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #3A170D;
-        padding: 20px;
-        gap: 20px;
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-    .dropdown-menu {
-        position: static;
-        display: none;
-    }
-
-    .dropdown.active .dropdown-menu {
-        display: block;
-    }
-}
-    */
-    .brand{
-  font-size: 40px;
-  font-weight: bold;
- /* background: linear-gradient(90deg, rgb(56, 16, 16), rgb(55, 38, 6), rgba(112, 112, 44, 0.949), rgb(24, 120, 24), blue, rgb(137, 16, 223), rgb(255, 29, 255));*/
- background: linear-gradient(90deg, blue, rgb(46, 9, 15),green);
+   
+    
+    font-family: "Courgette", cursive;
+    background: linear-gradient(90deg, blue, rgb(46, 9, 15),green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-    .brand {
-        
-        font-size: 20px;
-  font-family: "Courgette", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
+
     :root {
     /*--bg-color: #2d1611;
     --text-color: #f1e4d8;
@@ -239,7 +42,7 @@ body {
 }
 
 .header-grid-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
@@ -256,6 +59,11 @@ body {
 .logo img { 
     height: 100px; 
     border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    
 }
 
 .search-container { 
@@ -350,7 +158,7 @@ body {
 }
 .dropdown:hover .dropdown-content { 
     display: block; 
-}
+}/*
 .brand {
     text-align: center;
     margin-top: 110px;
@@ -358,14 +166,19 @@ body {
     font-size: 30px;
 }
 /* --- MOBILE RESPONSIVE LAYOUT --- */
-@media (max-width: 700px) {
+@media (max-width: 450px) {
     .header-grid-container {
         display: grid;
         grid-template-areas: 
             "empty logo account"
             "menu logo account" /* Adjusting for center logo */
             "search search search";
-        grid-template-columns: 1fr 2fr 1fr; /* Center logo gets more space */
+        /*grid-template-columns: 1fr 2fr 1fr; /* Center logo gets more space */
+        grid-template-columns: 1fr 1fr;
+grid-template-areas:
+    "menu account"
+    "logo logo"
+    "search search";
         gap: 15px;
         align-items: center;
     }
@@ -376,14 +189,17 @@ body {
         display: block; 
         justify-self: start; 
     }
+    .logo1 {
+        align-items: center;
+        nav-left: 20px;
+    }
     .logo { 
         grid-area: logo; 
         justify-self: center; 
     }
     .brand {
-        margin-top: 110px;
-    margin-left: -110px;
-    font-size: 30px;
+        margin-top: 10px;
+    font-size: 20px;
         grid-area: logo; 
         justify-self: center;
     }
@@ -398,6 +214,7 @@ body {
 
     .logo img { 
         height: 100px; 
+       
     }
     .account-btn { 
         padding: 5px 12px; 
