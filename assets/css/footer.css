@@ -10,7 +10,7 @@ body {
 
 .footer {
     /*background-image: linear-gradient(to bottom, red, rgb(0, 60, 255));*/
-    background-color: hsl(22, 100%, 51%);
+    background-color: #556B2F;
     color: #ffffff;
 }
 

@@ -1,112 +1,131 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vaidhyaamritayurveda</title>
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <link rel="stylesheet" href="assets/css/footer.css">
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!--<link rel="stylesheet" href="/style/header.css">-->
-    <link rel="stylesheet" href="assets/css/header.css">
-
-
-
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400..700&display=swap"
-        rel="stylesheet">
-
+    <title>Suwasthi Navbar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
+<body class="bg-[#FFFFFF] text-white">
 
+    <!-- HEADER -->
+    <header class="border-b border-[#556B2F]">
+        <div style="background-color: #556B2F;">
+        <div class="flex items-center justify-between px-4 py-3 lg:px-10 lg:py-5">
 
-<header class="main-header">
-    <div class="header-grid-container">
+            <!-- MOBILE MENU BUTTON -->
+            <button id="mobileMenuBtn" class="lg:hidden text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-        <div class="mobile-nav-toggle" id="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="logo1">
-            <div class="logo">
-                <img style="align-items: center;" src="assets/images/logo.jpeg" alt="Suwasthi Logo">
-                <!--<span class="brand">vaidhya amrit<br>ayurveda</span>-->
+            <!-- LOGO -->
+            <div class="flex flex-col items-center space-y-1">
+                <img src="assets/images/logo.jpeg" class="w-12 h-12" alt="Logo" style="border-radius: 50%;">
+                <span class="text-xl font-serif">vaidhya amrit ayurveda</span>
             </div>
-            <div class="brand">
-                <span class="brand1">vaidhya amrit<br>ayurveda</span>
+
+            <!-- SEARCH (DESKTOP) -->
+            <div class="hidden lg:flex flex-1 mx-10">
+                <div class="relative flex-1">
+                    <input type="text" class="w-full rounded-full px-10 py-3 bg-[#2e120c] border border-[#5b2a1f]"
+                        placeholder="Search for...">
+                    <i class="fa fa-search absolute left-3 top-3.5 text-gray-300"></i>
+                </div>
             </div>
-        </div>
-        <div class="search-container">
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
-                <input type="text" placeholder="Search for...">
-                <i class="fa-solid fa-magnifying-glass search-icon-right"></i>
-            </div>
+
+            <!-- ACCOUNT -->
+            <button class="border px-5 py-2 rounded-full flex items-center space-x-2">
+                <i class="fa fa-user"></i>
+                <span>Account</span>
+            </button>
         </div>
 
-        <div class="account-wrapper">
-            <a href="https://wa.me/91XXXXXXXXXX" class="account-btn">
-                <i class="fa-regular fa-user"></i> Account
-            </a>
+        <!-- SEARCH (MOBILE) -->
+        <div class="px-4 pb-3 lg:hidden">
+            <div class="relative" style="background-color: white;">
+                <input type="text" class="w-full rounded-full px-10 py-3 bg-[#556B2F] border border-[#FFFFFF]"
+                    placeholder="Search for...">
+                <i class="fa fa-search absolute left-3 top-3.5 text-gray-300"></i>
+            </div>
         </div>
-    </div>
+        </div>
 
-    <nav class="navbar" id="main-nav">
-        <ul class="nav-links">
-            <li class="dropdown">
-                <a href="#" class="nav-item">Diabetes Support <i class="fa-solid fa-chevron-down"></i></a>
-                <ul class="dropdown-content">
-                    <li><a href="pages/diacorex-powder.html">DiaCorex Powder</a></li>
-                    <li><a href="pages/karela&jammu-powder.htm">Karela&Jammu Powder</a></li>
-                    <li><a href="#">Ayurvedic Support</a></li>
+    </header>
+
+    <!-- NAVIGATION -->
+     <div style="background-color: #556B2F">
+    <nav class="border-b border-[#5b2a1f]">
+
+        <!-- DESKTOP NAV -->
+        <ul class="hidden lg:flex justify-center space-x-10 py-4">
+
+            <!-- DESKTOP DIABETES WITH FIX -->
+            <li class="relative" onmouseenter="openDesktopMenu()" onmouseleave="closeDesktopMenu()">
+
+                <a href="#" class="flex items-center space-x-1 hover:text-gray-300">
+                    <span>Diabetes Support</span>
+                    <i class="fa fa-chevron-down text-xs"></i>
+                </a>
+
+                <ul id="desktopDiabetesMenu"
+                    class="absolute hidden bg-[#2e120c] mt-2 w-52 rounded-lg border border-[#5b2a1f] z-50 py-2">
+
+                    <li><a href="pages/diacorex-powder.html"
+                            class="block px-4 py-2 hover:bg-[#3d1a12]">diacorex-powder</a></li>
+                    <li><a href="pages/karela&jammu-powder.htm" class="block px-4 py-2 hover:bg-[#3d1a12]">Karela abd
+                            jammu-powder</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-[#3d1a12]">Ayurvedic Support</a></li>
                 </ul>
             </li>
-            <li><a href="pages/urga-vardhak.htm">Urga Vardhak</a></li>
-            <li><a href="pages/gas_niwarak.htm">Gas Niwarak</a></li>
-            <li><a href="pages/vviv-customer.html">VVIP Customers</a></li>
+
+            <li><a href="pages/urga-vardhak.htm" class="hover:text-gray-300">Urja Vardhak</a></li>
+            <li><a href="pages/gas_niwarak.htm" class="hover:text-gray-300">gas_niwarak</a></li>
+            <li><a href="pages/vviv-customer.html" class="hover:text-gray-300">VVIP Customer</a></li>
+            <li><a href="#" class="hover:text-gray-300">VVIP Customers</a></li>
+            <li><a href="#" class="hover:text-gray-300">Research Publications</a></li>
         </ul>
+
+        <!-- MOBILE NAV -->
+        <div id="mobileNav" class="hidden lg:hidden bg-[#2e120c] px-4 pb-4 space-y-3">
+
+            <button id="diabetesBtn" class="w-full flex justify-between items-center py-2 border-b border-[#5b2a1f]">
+                <span>Diabetes Support</span>
+                <i class="fa fa-chevron-down"></i>
+            </button>
+
+            <ul id="diabetesMenu" class="hidden pl-4 space-y-2">
+                <li><a href="pages/diacorex-powder.html" class="block px-4 py-2 hover:bg-[#3d1a12]">diacorex-powder</a>
+                </li>
+                <li><a href="pages/karela&jammu-powder.htm" class="block px-4 py-2 hover:bg-[#3d1a12]">Karela abd
+                        jammu-powder</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-[#3d1a12]">Ayurvedic Support</a></li>
+            </ul>
+
+            <li><a href="pages/urga-vardhak.htm" class="hover:text-gray-300">Urja Vardhak</a></li>
+            <li><a href="pages/gas_niwarak.htm" class="hover:text-gray-300">gas_niwarak</a></li>
+            <li><a href="pages/vviv-customer.html" class="hover:text-gray-300">VVIP Customer</a></li>
+            <li><a href="#" class="hover:text-gray-300">VVIP Customers</a></li>
+            <li><a href="#" class="hover:text-gray-300">Research Publications</a></li>
+        </div>
+
     </nav>
-</header>
+    </div>
 
 
-
-
-
-
-
-
-
-<body>
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-left">
-            <img src="hero.png" alt="Guru Image">
-        </div>
-
-        <div class="hero-right">
-            <h1>
-                सुवास्थि <span>DiaCurex</span> अच्छा उत्पाद है।<br>
-                शुगर में यह अवश्य लाभ करेगा।
-            </h1>
-
-            <div class="quote-box">
-                <p>
-                    सुवास्थि द्वारा इतनी मेहनत और इतनी लगन से बनायीं ये
-                    आयुर्वेदिक दवाइयां समाज को एक नई दिशा देंगी और लोगों को
-                    बिना किसी नुकसान के आराम देंगी।
-                </p>
-            </div>
+            <img src="assets/images/abot.jpeg" alt="Guru Image">
         </div>
     </section>
+
 
     <!--Certification-->
 
@@ -136,30 +155,30 @@
         </div>
     </section>
 
-    <!--   We found solution  -->
-       <div class="solutions-we-found">
-    <h2>We've Found Solutions That Actually<br>Make Sense.</h2>
 
-    <div class="grid1">
-        <div class="card1">
-            <img src="assets/images/diabetes.mec.jpg" alt="">
-            <p>DIABETIC CARE</p>
-        </div>
-        <div class="card1">
-            <img src="assets/images/men-health.png" alt="">
-            <p>MEN'S HEALTH</p>
-        </div>
-        <div class="card1">
-            <img src="assets/images/energy-bost.jpg" alt="">
-            <p>ENERGY BOOSTERS</p>
-        </div>
-        <div class="card1">
-            <img src="assets/images/digestive-helth.jpg" alt="">
-            <p>DIGESTIVE HEALTH</p>
+    <!--   We found solution  -->
+    <div class="solutions-we-found">
+        <h2>We've Found Solutions That Actually<br>Make Sense.</h2>
+
+        <div class="grid1">
+            <div class="card1">
+                <img src="assets/images/diabetes.mec.jpg" alt="">
+                <p>DIABETIC CARE</p>
+            </div>
+            <div class="card1">
+                <img src="assets/images/men-health.png" alt="">
+                <p>MEN'S HEALTH</p>
+            </div>
+            <div class="card1">
+                <img src="assets/images/energy-bost.jpg" alt="">
+                <p>ENERGY BOOSTERS</p>
+            </div>
+            <div class="card1">
+                <img src="assets/images/digestive-helth.jpg" alt="">
+                <p>DIGESTIVE HEALTH</p>
+            </div>
         </div>
     </div>
-</div>
-
 
 
     <!--This is product-->
@@ -248,53 +267,54 @@
     </section>
 
     <!--      get expert help     -->
-          <div class="section">
+    <div class="section">
 
-    <div class="right">
-        <img src="assets/images/consult.jpg" alt="Health Expert">
-    </div>
+        <div class="right">
+            <img src="assets/images/consult.jpg" alt="Health Expert">
+        </div>
 
-    <div class="left">
-        <div class="tag">FREE CONSULTATION</div>
-        <h2>Get Expert Health Consultation</h2>
-        <p>Our certified health experts are here to provide personalized guidance for your wellness journey.</p>
+        <div class="left">
+            <div class="tag">FREE CONSULTATION</div>
+            <h2>Get Expert Health Consultation</h2>
+            <p>Our certified health experts are here to provide personalized guidance for your wellness journey.</p>
 
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">✔</div>
-                <div>
-                    <div class="card-title">Expert Guidance</div>
-                    <div class="card-text">Personalized health recommendations.</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">✔</div>
+                    <div>
+                        <div class="card-title">Expert Guidance</div>
+                        <div class="card-text">Personalized health recommendations.</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-icon">✔</div>
-                <div>
-                    <div class="card-title">Free Assessment</div>
-                    <div class="card-text">Comprehensive health evaluation.</div>
+                <div class="card">
+                    <div class="card-icon">✔</div>
+                    <div>
+                        <div class="card-title">Free Assessment</div>
+                        <div class="card-text">Comprehensive health evaluation.</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-icon">✔</div>
-                <div>
-                    <div class="card-title">Personalized Plan</div>
-                    <div class="card-text">Custom wellness strategy.</div>
+                <div class="card">
+                    <div class="card-icon">✔</div>
+                    <div>
+                        <div class="card-title">Personalized Plan</div>
+                        <div class="card-text">Custom wellness strategy.</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-icon">✔</div>
-                <div>
-                    <div class="card-title">Ongoing Support</div>
-                    <div class="card-text">Continuous guidance for your journey.</div>
+                <div class="card">
+                    <div class="card-icon">✔</div>
+                    <div>
+                        <div class="card-title">Ongoing Support</div>
+                        <div class="card-text">Continuous guidance for your journey.</div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
-</div>
 
 
     <section class="review-section">
@@ -449,33 +469,35 @@
         </div>
     </section>
 
-    <!--     section-whatsapp update    -->
-         <div class="section-whatsapp-update">
 
-    <!-- Left -->
-    <div style="flex:1;">
-        <div class="heading">
-            High blood sugar?<br>
-            Try this diabetes-friendly diet—for free
-        </div>
-        <div class="note">
-            Get your diet plan on WhatsApp. No spam, guaranteed
-        </div>
-    </div>
+    <!--     whatshapp  contact      -->
+    <section class="whatshapp">
 
-    <!-- Right -->
-    <div class="form-box">
-        <div class="input-box">
-            <input type="text" placeholder="ENTER WHATSAPP NUMBER">
-            <button class="btn">Get Free Guide</button>
-        </div>
-        <div class="small-info">
-            *Submit the form to receive WhatsApp updates. Unsubscribe anytime.
-        </div>
-    </div>
+        <!-- LEFT -->
+        <div>
+            <h1 style="font-size: 50px;">
+                High blood sugar?<br>
+                Try this diabetes-<br>
+                friendly diet—for free
+            </h1>
 
-</div>
+            <p class="subtext">
+                Get your diet plan on WhatsApp. No spam, guaranteed
+            </p>
+        </div>
 
+        <!-- RIGHT -->
+        <div class="right-panel">
+            <div class="form-row">
+                <input type="text" placeholder="ENTER WHATSAPP NUMBER">
+                <button id="b1">Get Free Guide</button>
+            </div>
+            <p class="note">
+                *Submit the form to receive WhatsApp updates. Unsubscribe anytime.
+            </p>
+        </div>
+
+    </section>
 
     <!-- our story-->
     <section class="our-story">
@@ -511,7 +533,6 @@
 
         </div>
     </section>
-
 
 
 
@@ -569,40 +590,66 @@
     </div>
 
     <!--      STATS  Section      -->
-          <!-- STATS SECTION -->
-<div class="stats-section" id="stats">
-    <div class="stats-title">What We've Achieved So Far</div>
+    <!-- STATS SECTION -->
+    <div class="stats-section" id="stats">
+        <div class="stats-title">What We've Achieved So Far</div>
 
-    <div class="stats-grid">
-        <div class="stat">
-            <div class="stat-number" data-target="30000">0</div>
-            <div class="stat-label">LIVES TOUCHED</div>
-        </div>
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-number" data-target="30000">0</div>
+                <div class="stat-label">LIVES TOUCHED</div>
+            </div>
 
-        <div class="stat">
-            <div class="stat-number" data-target="130">0</div>
-            <div class="stat-label">CITIES ACROSS INDIA</div>
-        </div>
+            <div class="stat">
+                <div class="stat-number" data-target="130">0</div>
+                <div class="stat-label">CITIES ACROSS INDIA</div>
+            </div>
 
-        <div class="stat">
-            <div class="stat-number" data-target="86">0</div>
-            <div class="stat-label">CUSTOMER SATISFACTION (%)</div>
-        </div>
+            <div class="stat">
+                <div class="stat-number" data-target="86">0</div>
+                <div class="stat-label">CUSTOMER SATISFACTION (%)</div>
+            </div>
 
-        <div class="stat">
-            <div class="stat-number" data-target="4.6" data-decimal="true">0</div>
-            <div class="stat-label">RATED BY 1000+ USERS</div>
+            <div class="stat">
+                <div class="stat-number" data-target="4.6" data-decimal="true">0</div>
+                <div class="stat-label">RATED BY 1000+ USERS</div>
+            </div>
         </div>
     </div>
-</div>
-
-
-
 
     <script src="assets/js/reviewer.js"></script>
     <script src="assets/js/script.js"></script>
-</body>
 
+
+
+
+    <script>
+        // Mobile menu open/close
+        document.getElementById("mobileMenuBtn").onclick = () => {
+            document.getElementById("mobileNav").classList.toggle("hidden");
+        };
+
+        // Mobile diabetes open/close
+        document.getElementById("diabetesBtn").onclick = () => {
+            document.getElementById("diabetesMenu").classList.toggle("hidden");
+        };
+
+        // Desktop smooth menu fix
+        let desktopTimer = null;
+
+        function openDesktopMenu() {
+            clearTimeout(desktopTimer);
+            document.getElementById("desktopDiabetesMenu").classList.remove("hidden");
+        }
+
+        function closeDesktopMenu() {
+            desktopTimer = setTimeout(() => {
+                document.getElementById("desktopDiabetesMenu").classList.add("hidden");
+            }, 200);
+        }
+    </script>
+
+</body>
 
 <!-- footer-->
 
@@ -672,5 +719,7 @@
     </div>
 </footer>
 
+
+</html>
 
 </html>

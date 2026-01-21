@@ -3,98 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Solutions Section</title>
+<title>Diabetes CTA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Section container */
-.solutions-we-found {
-    padding: 60px 8%;
-    text-align: center;
-}
-
-/* Title */
-.solutions-we-found h2 {
-    font-size: 38px;
-    font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 45px;
-}
-
-/* Cards Grid */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 28px;
-}
-
-/* Card */
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 14px;
-}
-
-.card p {
-    font-size: 16px;
-    font-weight: 800;
-    margin-top: 12px;
-}
-
-/* RESPONSIVE */
-@media(max-width: 992px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width: 560px) {
-    .grid {
-        grid-template-columns: 1fr;
+    body {
+        margin: 0;
+        padding: 0;
+        background: #4DB98C;
+        color: white;
+        font-family: Arial, sans-serif;
     }
 
-    .solutions h2 {
-        font-size: 28px;
+    section {
+        width: 100%;
+        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: 1400px;
+        margin: auto;
     }
 
-    .card img {
-        height: 240px;
+    h1 {
+        font-family: 'Domine', serif;
+        font-size: 52px;
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0;
     }
-}
+
+    .subtext {
+        margin-top: 18px;
+        font-size: 20px;
+        opacity: 0.95;
+    }
+
+    .right-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    input {
+        flex: 1;
+        min-width: 260px;
+        padding: 15px 18px;
+        border-radius: 8px;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #444;
+        outline: none;
+    }
+
+    button {
+        min-width: 200px;
+        padding: 15px 18px;
+        background: black;
+        border: none;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+
+    .note {
+        font-size: 14px;
+        opacity: 0.95;
+    }
+
+    /* Layout for desktop */
+    @media (min-width: 900px) {
+        section {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        h1 {
+            font-size: 54px;
+        }
+    }
 </style>
+
 </head>
 <body>
 
-<div class="solutions-we-found">
-    <h2>We've Found Solutions That Actually<br>Make Sense.</h2>
+<section>
 
-    <div class="grid">
-        <div class="card">
-            <img src="diabetic.jpg" alt="">
-            <p>DIABETIC CARE</p>
-        </div>
-        <div class="card">
-            <img src="mens.jpg" alt="">
-            <p>MEN'S HEALTH</p>
-        </div>
-        <div class="card">
-            <img src="energy.jpg" alt="">
-            <p>ENERGY BOOSTERS</p>
-        </div>
-        <div class="card">
-            <img src="digestive.jpg" alt="">
-            <p>DIGESTIVE HEALTH</p>
-        </div>
+    <!-- LEFT -->
+    <div>
+        <h1>
+            High blood sugar?<br>
+            Try this diabetes-<br>
+            friendly diet—for free
+        </h1>
+
+        <p class="subtext">
+            Get your diet plan on WhatsApp. No spam, guaranteed
+        </p>
     </div>
-</div>
+
+    <!-- RIGHT -->
+    <div class="right-panel">
+        <div class="form-row">
+            <input type="text" placeholder="ENTER WHATSAPP NUMBER">
+            <button>Get Free Guide</button>
+        </div>
+        <p class="note">
+            *Submit the form to receive WhatsApp updates. Unsubscribe anytime.
+        </p>
+    </div>
+
+</section>
+
+</body>
+</html>
