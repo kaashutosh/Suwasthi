@@ -1,19 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const navBar = document.getElementById('main-nav');
-    const dropdown = document.querySelector('.dropdown');
+document.getElementById("mobileMenuBtn").onclick = () => {
+            document.getElementById("mobileNav").classList.toggle("hidden");
+        };
 
-    // Toggle Mobile Navbar
-    menuToggle.addEventListener('click', () => {
-        navBar.classList.toggle('active');
-    });
+        // Mobile diabetes open/close
+        document.getElementById("diabetesBtn").onclick = () => {
+            document.getElementById("diabetesMenu").classList.toggle("hidden");
+        };
 
-    // Toggle Dropdown for Mobile (click instead of hover)
-    dropdown.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-            const content = dropdown.querySelector('.dropdown-content');
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            e.stopPropagation();
+        // Desktop smooth menu fix
+        let desktopTimer = null;
+
+        function openDesktopMenu() {
+            clearTimeout(desktopTimer);
+            document.getElementById("desktopDiabetesMenu").classList.remove("hidden");
         }
-    });
-});
+
+        function closeDesktopMenu() {
+            desktopTimer = setTimeout(() => {
+                document.getElementById("desktopDiabetesMenu").classList.add("hidden");
+            }, 200);
+        }

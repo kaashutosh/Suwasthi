@@ -21,6 +21,15 @@ function closeDesktopMenu() {
         document.getElementById("desktopDiabetesMenu").classList.add("hidden");
     }, 200);
 }
+
+/*  first swiper  */
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  autoplay:{
+    delay:2500,
+    disableOnInteraction:false,
+  }
+});
 /*
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');

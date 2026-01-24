@@ -3,131 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diabetes CTA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&display=swap" rel="stylesheet">
-
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: #4DB98C;
-        color: white;
-        font-family: Arial, sans-serif;
-    }
+  .slide-img {
+    width: 100%;
+    height: 100vh;      /* Full screen height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
-    section {
-        width: 100%;
-        padding: 80px 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        max-width: 1400px;
-        margin: auto;
+  @media(max-width:768px){
+    .slide-img{
+      height: 60vh;     /* Mobile responsive height */
     }
-
-    h1 {
-        font-family: 'Domine', serif;
-        font-size: 52px;
-        font-weight: 700;
-        line-height: 1.1;
-        margin: 0;
-    }
-
-    .subtext {
-        margin-top: 18px;
-        font-size: 20px;
-        opacity: 0.95;
-    }
-
-    .right-panel {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .form-row {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-    }
-
-    input {
-        flex: 1;
-        min-width: 260px;
-        padding: 15px 18px;
-        border-radius: 8px;
-        border: none;
-        font-size: 16px;
-        font-weight: 600;
-        color: #444;
-        outline: none;
-    }
-
-    button {
-        min-width: 200px;
-        padding: 15px 18px;
-        background: black;
-        border: none;
-        color: white;
-        font-size: 17px;
-        font-weight: bold;
-        border-radius: 8px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        opacity: 0.9;
-    }
-
-    .note {
-        font-size: 14px;
-        opacity: 0.95;
-    }
-
-    /* Layout for desktop */
-    @media (min-width: 900px) {
-        section {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        h1 {
-            font-size: 54px;
-        }
-    }
+  }
 </style>
-
 </head>
-<body>
 
-<section>
+<body style="margin:0;">
 
-    <!-- LEFT -->
-    <div>
-        <h1>
-            High blood sugar?<br>
-            Try this diabetes-<br>
-            friendly diet—for free
-        </h1>
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
 
-        <p class="subtext">
-            Get your diet plan on WhatsApp. No spam, guaranteed
-        </p>
-    </div>
+    <div class="swiper-slide slide-img" style="background-image:url('../assets/images/abot.jpeg');"></div>
+    <div class="swiper-slide slide-img" style="background-image:url('../assets/images/abot.jpeg');"></div>
+    <div class="swiper-slide slide-img" style="background-image:url('../assets/images/abot.jpeg');"></div>
+    <div class="swiper-slide slide-img" style="background-image:url('../assets/images/abot.jpeg');"></div>
 
-    <!-- RIGHT -->
-    <div class="right-panel">
-        <div class="form-row">
-            <input type="text" placeholder="ENTER WHATSAPP NUMBER">
-            <button>Get Free Guide</button>
-        </div>
-        <p class="note">
-            *Submit the form to receive WhatsApp updates. Unsubscribe anytime.
-        </p>
-    </div>
+  </div>
+</div>
 
-</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  autoplay:{
+    delay:2500,
+    disableOnInteraction:false,
+  }
+});
+</script>
 
 </body>
 </html>
