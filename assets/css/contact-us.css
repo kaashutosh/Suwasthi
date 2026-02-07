@@ -33,7 +33,7 @@
     color: #555;
     line-height: 1.45;
 }
-@media (max-width: 992px) {
+@media (max-width: 600px) {
     .contact-section {
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
@@ -128,7 +128,7 @@
     line-height: 1.5;
     padding: 15px 0;
 }
-@media (max-width: 992px) {
+@media (max-width: 600px) {
     .office-wrapper {
         flex-direction: column;
     }
@@ -213,7 +213,7 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 600px) {
     .manufacturing-container {
         grid-template-columns: 1fr;
     }

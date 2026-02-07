@@ -52,7 +52,7 @@
     margin: 10px auto 20px auto;
     opacity: 0.7;
 }
-@media (max-width: 900px) {
+@media (max-width: 600px) {
     .mission-overlay h2 {
         font-size: 32px;
     }

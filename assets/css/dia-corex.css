@@ -44,14 +44,14 @@
 }
 
 /* Tablet */
-@media (max-width: 992px) {
+@media (max-width: 600px) {
     .certificate-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* Mobile */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .certificate-grid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -182,7 +182,7 @@
 .next { right: -10px; }
 
 /* 📱 Mobile */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .review-card {
         flex: 0 0 calc(50% - 15px); /* 2 cards mobile */
     }
@@ -245,7 +245,7 @@
 }
 
 /* TABLET (2 per row) */
-@media (max-width: 992px) {
+@media (max-width: 600px) {
     .ingredients-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -324,7 +324,7 @@
     text-align: left;
     color: #2b2b2b;
 }
-@media (max-width: 992px) {
+@media (max-width: 600px) {
     .consume-grid {
         grid-template-columns: repeat(2, 1fr);
     }

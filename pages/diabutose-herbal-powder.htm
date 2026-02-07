@@ -13,55 +13,7 @@
 </head>
 
 
-<!--   Header --
-<header class="main-header">
-    <div class="header-grid-container">
-        
-        <div class="mobile-nav-toggle" id="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-        <div class="logo">
-            <img src="../assets/images/logo.jpeg" alt="Suwasthi Logo">
-            <span class="brand">Suwasthi</span>
-        </div>
-
-        <div class="search-container">
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
-                <input type="text" placeholder="Search for...">
-                <i class="fa-solid fa-magnifying-glass search-icon-right"></i>
-            </div>
-        </div>
-
-        <div class="account-wrapper">
-            <a href="https://wa.me/91XXXXXXXXXX" class="account-btn">
-                <i class="fa-regular fa-user"></i> Account
-            </a>
-        </div>
-    </div>
-
-    <nav class="navbar" id="main-nav">
-        <ul class="nav-links">
-            <li class="dropdown">
-                <a href="#" class="nav-item">Diabetes Support <i class="fa-solid fa-chevron-down"></i></a>
-                <ul class="dropdown-content">
-                    <li><a href="diacorex-powder.html">DiaCorex Powder</a></li>
-                    <li><a href="karela&jammu-powder.htm">Karela&Jammu Powder</a></li>
-                    <li><a href="#">Ayurvedic Support</a></li>
-                </ul>
-            </li>
-            <li><a href="urga-vardhak.htm">Urga Vardhak</a></li>
-            <li><a href="gas_niwarak.htm">Gas Niwarak</a></li>
-            <li><a href="vviv-customer.html">VVIP Customers</a></li>
-        </ul>
-    </nav>
-</header>
-
-<body>
-
--->
-    <body class="bg-[#FFFFFF] text-white">
+<body class="bg-[#FFFFFF] text-white">
 
     <!-- HEADER -->
     <header class="border-b border-[#556B2F]">
@@ -137,8 +89,6 @@
                 <li><a href="urga-vardhak.htm" class="hover:text-gray-300">Urja Vardhak</a></li>
                 <li><a href="gas_niwarak.htm" class="hover:text-gray-300">gas_niwarak</a></li>
                 <li><a href="vviv-customer.html" class="hover:text-gray-300">VVIP Customer</a></li>
-                <li><a href="#" class="hover:text-gray-300">VVIP Customers</a></li>
-                <li><a href="#" class="hover:text-gray-300">Research Publications</a></li>
             </ul>
 
             <!-- MOBILE NAV -->
@@ -151,8 +101,7 @@
                 </button>
 
                 <ul id="diabetesMenu" class="hidden pl-4 space-y-2">
-                    <li><a href="diacorex-powder.html"
-                            class="block px-4 py-2 hover:bg-[#3d1a12]">diacorex-powder</a>
+                    <li><a href="diacorex-powder.html" class="block px-4 py-2 hover:bg-[#3d1a12]">diacorex-powder</a>
                     </li>
                     <li><a href="karela&jammu-powder.htm" class="block px-4 py-2 hover:bg-[#3d1a12]">Karela abd
                             jammu-powder</a></li>
@@ -162,8 +111,6 @@
                 <li><a href="urga-vardhak.htm" class="hover:text-gray-300">Urja Vardhak</a></li>
                 <li><a href="gas_niwarak.htm" class="hover:text-gray-300">gas_niwarak</a></li>
                 <li><a href="vviv-customer.html" class="hover:text-gray-300">VVIP Customer</a></li>
-                <li><a href="#" class="hover:text-gray-300">VVIP Customers</a></li>
-                <li><a href="#" class="hover:text-gray-300">Research Publications</a></li>
             </div>
 
         </nav>
@@ -197,7 +144,7 @@
 
             <p class="pack">Pack Of 1</p>
 
-            <button class="buy-btn" onclick="buy('Diabutose Herbal Powder',2199,'../assets/images/diabutose-herbal-powder.png','44790764208182')">Buy It Now</button>
+            <button class="buy-btn" onclick="buy()">Buy It Now</button>
 
         </div>
 
@@ -419,13 +366,14 @@
 
 
     <script>
-        function buy(name,price,img,variant){
-window.location.href=
-`test.html?name=${encodeURIComponent(name)}
-&price=${price}
-&img=${encodeURIComponent(img)}
-&variant=${variant}`;
-}
+        function buy() {
+            const shop = "mnhkqb-zs.myshopify.com";
+            const variantId = "44790764208182"; // 🔥 replace with real variant ID
+
+            // Direct checkout link
+            window.location.href =
+                `https://${shop}/cart/${variantId}:1`;
+        }
     </script>
     <script src="../assets/js/header.js"></script>
 

@@ -87,8 +87,6 @@
                 <li><a href="urga-vardhak.htm" class="hover:text-gray-300">Urja Vardhak</a></li>
                 <li><a href="gas_niwarak.htm" class="hover:text-gray-300">gas_niwarak</a></li>
                 <li><a href="vviv-customer.html" class="hover:text-gray-300">VVIP Customer</a></li>
-                <li><a href="#" class="hover:text-gray-300">VVIP Customers</a></li>
-                <li><a href="#" class="hover:text-gray-300">Research Publications</a></li>
             </ul>
 
             <!-- MOBILE NAV -->
@@ -112,8 +110,6 @@
                 <li><a href="urga-vardhak.htm" class="hover:text-gray-300">Urja Vardhak</a></li>
                 <li><a href="gas_niwarak.htm" class="hover:text-gray-300">gas_niwarak</a></li>
                 <li><a href="vviv-customer.html" class="hover:text-gray-300">VVIP Customer</a></li>
-                <li><a href="#" class="hover:text-gray-300">VVIP Customers</a></li>
-                <li><a href="#" class="hover:text-gray-300">Research Publications</a></li>
             </div>
 
         </nav>
@@ -235,7 +231,7 @@
     </section>
 
     <div class="btn-container">
-        <button class="order-btn" onclick="location.href='checkout.html'">Order Now</button>
+        <button class="order-btn" onclick="buy()">Order Now</button>
     </div>
 
 
@@ -370,7 +366,13 @@
 
     <script>
         function goToBuy() {
-            window.location.href = "checkout.html?name=Gas%20Nivarak&price=1699&img=../assets/images/Gas_Nivarak_img.png";
+
+            const shop = "mnhkqb-zs.myshopify.com";
+            const variantId = "44793331089462"; // 🔥 replace with real variant ID
+
+            // Direct checkout link
+            window.location.href =
+                `https://${shop}/cart/${variantId}:1`;
         }
     </script>
     <script src="../assets/js/header.js"></script>

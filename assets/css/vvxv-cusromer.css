@@ -100,7 +100,7 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 992px) {
+@media (max-width: 600px) {
     .vvip-card { flex-direction: column; text-align: center; }
     .vvip-middle { width: 90%; text-align: center; }
     .vvip-left, .vvip-right { width: 70%; }
