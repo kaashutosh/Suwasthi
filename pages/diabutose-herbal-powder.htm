@@ -197,7 +197,7 @@
 
             <p class="pack">Pack Of 1</p>
 
-            <button class="buy-btn" onclick="goToBuy()">Buy It Now</button>
+            <button class="buy-btn" onclick="buy('Diabutose Herbal Powder',2199,'../assets/images/diabutose-herbal-powder.png','44790764208182')">Buy It Now</button>
 
         </div>
 
@@ -419,9 +419,13 @@
 
 
     <script>
-        function goToBuy() {
-            window.location.href = "checkout.html?name=Diabutose%20Herbal%20Powder&price=1699&img=../assets/images/diabutose-herbal-powder.png";
-        }
+        function buy(name,price,img,variant){
+window.location.href=
+`test.html?name=${encodeURIComponent(name)}
+&price=${price}
+&img=${encodeURIComponent(img)}
+&variant=${variant}`;
+}
     </script>
     <script src="../assets/js/header.js"></script>
 

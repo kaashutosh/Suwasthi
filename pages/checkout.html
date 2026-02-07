@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -70,7 +70,7 @@
 
         <br>
 
-        <!-- Quantity Selector -->
+        !-- Quantity Selector --
         <select id="qty" style="width: 100%;padding: 12px;" onchange="updatePrice()">
             <option value="1">1 Item</option>
             <option value="2">2 Items</option>
@@ -132,4 +132,332 @@
 
 </body>
 
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Buy Now</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #eff7ef;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .product {
+            text-align: center;
+        }
+
+        .product img {
+            width: 260px;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        form input,
+        textarea,
+        select {
+            width: 96%;
+            padding: 12px;
+            margin: 6px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        button {
+            background: #c4894f;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .priceBox {
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Product Display -->
+    <div class="product">
+        <img id="pImg">
+        <h2 id="pName"></h2>
+        <h3>Price: Rs <span id="pPrice"></span></h3>
+    </div>
+
+    <div class="priceBox">
+        Total Price: Rs <span id="price">1699</span>
+    </div>
+
+    <!-- Quantity -->
+    <select id="qty" onchange="updatePrice()">
+        <option value="1">1 Item</option>
+        <option value="2">2 Items</option>
+        <option value="3">3 Items</option>
+        <option value="4">4 Items</option>
+        <option value="5">5 Items</option>
+    </select>
+
+    <!-- Order Form -->
+    <form id="orderForm">
+        <input placeholder="First Name" required>
+        <input placeholder="Last Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <textarea placeholder="House no / Plot no / Full Address" required></textarea>
+        <input placeholder="Pincode" required>
+        <input placeholder="District" required>
+        <input placeholder="State" required>
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+</div>
+
+<script>
+    /* Read product info from URL */
+    const params = new URLSearchParams(location.search);
+
+    document.getElementById("pName").innerText =
+        params.get("name") || "Urja Vardhak";
+
+    document.getElementById("pPrice").innerText =
+        params.get("price") || "1699";
+
+    document.getElementById("pImg").src =
+        params.get("img") || "";
+
+    const basePrice = 1699;
+
+    function updatePrice() {
+        const qty = document.getElementById("qty").value;
+        document.getElementById("price").innerText = basePrice * qty;
+    }
+
+    /* Shopify Redirect */
+    document.getElementById("orderForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const qty = document.getElementById("qty").value;
+
+        // 🔴 CHANGE THESE VALUES
+        const SHOP_DOMAIN = "yourstore.myshopify.com";
+        const VARIANT_ID = "12345678901234";
+
+        // Shopify cart URL
+        const checkoutURL =
+            `https://${SHOP_DOMAIN}/cart/${VARIANT_ID}:${qty}`;
+
+        // Redirect to Shopify checkout
+        window.location.href = checkoutURL;
+    });
+</script>
+
+</body>
 </html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Form</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f4f5;
+  margin: 0;
+  padding: 15px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.price, .total {
+  text-align: center;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+select, input, textarea, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: none;
+  height: 60px;
+}
+
+button {
+  background: #b57a3a;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+@media(max-width:480px){
+  .container{
+    padding:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2 id="productName">Select Product</h2>
+<div class="price">Price: ₹ <span id="price">0</span></div>
+<div class="total">Total: ₹ <span id="total">0</span></div>
+
+<form id="orderForm">
+
+<select id="productSelect" required>
+<option value="">Choose Product</option>
+
+<option value="11111111111111" data-price="1699" data-name="Diabutose Herbal Powder">
+Diabutose Herbal Powder – ₹1699
+</option>
+
+<option value="22222222222222" data-price="999" data-name="Product 2">
+Product 2 – ₹999
+</option>
+
+<option value="33333333333333" data-price="1299" data-name="Product 3">
+Product 3 – ₹1299
+</option>
+
+<option value="44444444444444" data-price="1499" data-name="Product 4">
+Product 4 – ₹1499
+</option>
+
+<option value="55555555555555" data-price="1799" data-name="Product 5">
+Product 5 – ₹1799
+</option>
+
+<option value="66666666666666" data-price="1999" data-name="Product 6">
+Product 6 – ₹1999
+</option>
+
+</select>
+
+<select id="qty">
+<option value="1">1 Item</option>
+<option value="2">2 Items</option>
+<option value="3">3 Items</option>
+<option value="4">4 Items</option>
+</select>
+
+<input type="text" placeholder="First Name" required>
+<input type="text" placeholder="Last Name" required>
+<input type="email" placeholder="Email" required>
+<input type="tel" placeholder="Phone Number" required>
+<textarea placeholder="House no / Plot no / Full Address" required></textarea>
+<input type="text" placeholder="Pincode" required>
+<input type="text" placeholder="District" required>
+<input type="text" placeholder="State" required>
+
+<button type="submit">Submit Order</button>
+
+</form>
+</div>
+
+<script>
+
+const shop = "mnhkqb-zs.myshopify.com"; // your store
+
+const productSelect = document.getElementById("productSelect");
+const qtySelect = document.getElementById("qty");
+
+function updatePrice(){
+  const option = productSelect.selectedOptions[0];
+  if(!option.value){
+    price.textContent = 0;
+    total.textContent = 0;
+    productName.textContent = "Select Product";
+    return;
+  }
+
+  const priceVal = parseInt(option.dataset.price);
+  const qty = parseInt(qtySelect.value);
+
+  document.getElementById("price").textContent = priceVal;
+  document.getElementById("total").textContent = priceVal * qty;
+  document.getElementById("productName").textContent = option.dataset.name;
+}
+
+productSelect.addEventListener("change", updatePrice);
+qtySelect.addEventListener("change", updatePrice);
+
+document.getElementById("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const variantId = productSelect.value;
+  const qty = qtySelect.value;
+
+  if(!variantId){
+    alert("Select product first");
+    return;
+  }
+
+  window.location.href = `https://${shop}/cart/${variantId}:${qty}`;
+});
+
+</script>
+
+</body>
+</html>
+
+-->
+

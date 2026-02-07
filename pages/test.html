@@ -1,117 +1,198 @@
-<!--
+<!----
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Swiper --
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<style>
-  .slide-img {
-    width: 100%;
-    height: 100vh;      /* Full screen height */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  @media(max-width:768px){
-    .slide-img{
-      height: 60vh;     /* Mobile responsive height */
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f6f8;
+      padding: 20px;
     }
-  }
-</style>
+
+    .box {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
 </head>
 
-<body style="margin:0;">
+<body>
 
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
+<div class="box">
+  <h2>Order Now</h2>
 
-    <div class="swiper-slide slide-img" style="background-image:url('../assets/images/abot.jpeg');"></div>
-    <div class="swiper-slide slide-img" style="background-image:url('../assets/images/abot.jpeg');"></div>
-    <div class="swiper-slide slide-img" style="background-image:url('../assets/images/abot.jpeg');"></div>
-    <div class="swiper-slide slide-img" style="background-image:url('../assets/images/abot.jpeg');"></div>
+  <form id="orderForm">
+    <input type="text" placeholder="Full Name" required>
+    <input type="tel" placeholder="Phone Number" required>
 
-  </div>
+    <select id="productSelect" required>
+      <option value="">Select Product</option>
+      <option value="44790764208182">Product 1 – ₹999</option>
+      <option value="12345678901235">Product 2 – ₹1499</option>
+      <option value="12345678901236">Product 3 – ₹1999</option>
+      <option value="12345678901237">Product 4 – ₹2499</option>
+      <option value="12345678901238">Product 5 – ₹2999</option>
+      <option value="12345678901239">Product 6 – ₹3499</option>
+    </select>
+
+    <button type="submit">Checkout</button>
+  </form>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-var swiper = new Swiper(".mySwiper", {
-  loop: true,
-  autoplay:{
-    delay:2500,
-    disableOnInteraction:false,
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const variantId = document.getElementById("productSelect").value;
+
+  if (!variantId) {
+    alert("Please select a product");
+    return;
   }
+
+  const shop = "mnhkqb-zs.myshopify.com";
+  // Redirect to Shopify checkout
+  window.location.href =
+    `https://${shop}/cart/${variantId}:1`;
 });
 </script>
 
 </body>
 </html>
-
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Company Benefits</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+
+<style>
+body{font-family:Arial;background:#eef1ef;margin:0;padding:15px;}
+
+.box{
+max-width:500px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+img{width:100%;max-width:200px;display:block;margin:auto;}
+
+h2{text-align:center;}
+
+select,input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+font-size:16px;
+}
+
+button{
+background:#c18b49;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.total{
+text-align:center;
+font-size:18px;
+margin-top:5px;
+}
+</style>
 </head>
-<body class="bg-white">
 
-<section class="max-w-7xl mx-auto px-4 py-12">
-  
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<body>
 
-    <!-- Card 1 -->
-    <div class="border rounded-xl p-8 text-center">
-      <div class="text-4xl mb-4">💰</div>
-      <h3 class="text-xl font-semibold mb-3">Competitive Salaries</h3>
-      <p class="text-gray-600">We ensure our team members are well compensated with a deserving package that reflects their worth</p>
-    </div>
+<div class="box">
 
-    <!-- Card 2 -->
-    <div class="border rounded-xl p-8 text-center">
-      <div class="text-4xl mb-4">🏆</div>
-      <h3 class="text-xl font-semibold mb-3">Incentive-Based Rewards</h3>
-      <p class="text-gray-600">We have an incentive system that rewards performance-based bonuses for all outstanding work done</p>
-    </div>
+<img id="pImg">
+<h2 id="pName"></h2>
 
-    <!-- Card 3 -->
-    <div class="border rounded-xl p-8 text-center">
-      <div class="text-4xl mb-4">🍽️</div>
-      <h3 class="text-xl font-semibold mb-3">Daily Delicious Lunch</h3>
-      <p class="text-gray-600">We provide free delicious, nutritious meals daily for all team members to keep them healthy and focused</p>
-    </div>
+<div class="total">
+Price ₹ <span id="price"></span>
+</div>
 
-    <!-- Card 4 -->
-    <div class="border rounded-xl p-8 text-center">
-      <div class="text-4xl mb-4">🌂</div>
-      <h3 class="text-xl font-semibold mb-3">Paid Time Off</h3>
-      <p class="text-gray-600">We believe in work-life balance, hence we offer flexible paid leaves so you can rest and enjoy your personal time</p>
-    </div>
+<select id="qty">
+<option value="1">1 Item</option>
+<option value="2">2 Items</option>
+<option value="3">3 Items</option>
+<option value="4">4 Items</option>
+</select>
 
-    <!-- Card 5 -->
-    <div class="border rounded-xl p-8 text-center">
-      <div class="text-4xl mb-4">📍</div>
-      <h3 class="text-xl font-semibold mb-3">Convenient Location</h3>
-      <p class="text-gray-600">Our office is located in GM IT Park, just a short walk from the metro making your commute easier</p>
-    </div>
+<div class="total">
+Total ₹ <span id="total"></span>
+</div>
 
-    <!-- Card 6 -->
-    <div class="border rounded-xl p-8 text-center">
-      <div class="text-4xl mb-4">🎉</div>
-      <h3 class="text-xl font-semibold mb-3">Success Celebrations</h3>
-      <p class="text-gray-600">Every quarter, we arrange events and celebrations to appreciate our team's efforts and achievements</p>
-    </div>
+<form id="form">
+<input placeholder="First Name" required>
+<input placeholder="Phone Number" required>
+<input placeholder="Address" required>
+<button type="submit">Submit COD Order</button>
+</form>
 
-  </div>
+</div>
 
-</section>
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const name = params.get("name");
+const price = parseInt(params.get("price"));
+const img = params.get("img");
+const variant = params.get("variant");
+
+document.getElementById("pName").innerText = name;
+document.getElementById("pImg").src = img;
+document.getElementById("price").innerText = price;
+
+const qtySelect = document.getElementById("qty");
+const totalSpan = document.getElementById("total");
+
+function updateTotal(){
+totalSpan.innerText = price * qtySelect.value;
+}
+updateTotal();
+qtySelect.addEventListener("change",updateTotal);
+
+const shop = "mnhkqb-zs.myshopify.com";
+
+document.getElementById("form").addEventListener("submit",function(e){
+e.preventDefault();
+
+const qty = qtySelect.value;
+
+window.location.href =
+`https://${shop}/cart/${variant}:${qty}`;
+});
+</script>
 
 </body>
 </html>
-
