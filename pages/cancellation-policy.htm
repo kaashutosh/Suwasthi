@@ -12,27 +12,159 @@
 </head>
 
 
+<style>
+    * {
+        transition: all 0.25s ease;
+    }
+</style>
 
+</head>
 
-<body class="bg-[#FFFFFF] text-white">
+<body class="bg-white text-white">
 
     <!-- HEADER -->
+    <header class="border-b border-[#556B2F] bg-[#556B2F]">
+
+        <div class="px-4 py-3 lg:px-10 lg:py-5">
+
+            <!-- DESKTOP ROW -->
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+
+                <!-- MOBILE TOP ROW -->
+                <div class="flex items-center justify-between lg:hidden">
+
+                    <button id="mobileMenuBtn" class="text-xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="flex flex-col items-center">
+                        <img src="../assets/images/logo.jpeg" class="w-12 h-12 rounded-full" alt="Logo">
+                        <span class="text-sm font-serif text-center mt-1">
+                            vaidhya amrit ayurveda
+                        </span>
+                    </div>
+
+                    <button class="border px-3 py-1 rounded-full flex items-center space-x-1 text-sm">
+                        <i class="fa fa-user"></i>
+                    </button>
+                </div>
+
+                <!-- DESKTOP LOGO -->
+                <div class="hidden lg:flex flex-col items-center">
+                    <img src="../assets/images/logo.jpeg" class="w-24 h-24 rounded-full" alt="Logo">
+                    <span class="text-xl font-serif mt-1">
+                        vaidhya amrit ayurveda
+                    </span>
+                </div>
+
+                <!-- SEARCH CENTER -->
+                <div class="w-full lg:w-1/2">
+                    <div class="relative">
+                        <input type="text"
+                            class="w-full rounded-full px-10 py-3 text-black bg-white border border-white"
+                            placeholder="Search for...">
+                        <i class="fa fa-search absolute left-3 top-3.5 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- DESKTOP ACCOUNT -->
+                <div class="hidden lg:flex">
+                    <button class="border px-5 py-2 rounded-full flex items-center space-x-2">
+                        <i class="fa fa-user"></i>
+                        <span>Account</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <div class="bg-[#556B2F]">
+
+        <nav class="border-b border-[#5b2a1f]">
+
+            <ul class="hidden lg:flex justify-center space-x-10 py-4">
+
+                <li class="relative group pb-4">
+
+                    <a href="#" class="flex items-center space-x-1 hover:text-gray-300">
+                        <span>Diabetes Support</span>
+                        <i class="fa fa-chevron-down text-xs"></i>
+                    </a>
+
+                    <div class="absolute left-0 top-full w-full h-4"></div>
+
+                    <ul class="absolute left-0 top-full opacity-0 invisible
+           group-hover:opacity-100 group-hover:visible
+           bg-[#2e120c] mt-2 w-52 rounded-lg border border-[#5b2a1f]
+           z-50 py-2 transition duration-200">
+
+                        <li><a href="diabutose-herbal-powder.htm" class="block px-4 py-2 hover:bg-[#3d1a12]">Diabutose Powder</a></li>
+                        <li><a href="gas_niwarak.htm" class="block px-4 py-2 hover:bg-[#3d1a12]">Karela Jamun Powder</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-[#3d1a12]">Ayurvedic Support</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="urga-vardhak.htm" class="hover:text-gray-300">Urja Vardhak</a></li>
+                <li><a href="gas_niwarak.htm" class="hover:text-gray-300">Gas Niwarak</a></li>
+                <li><a href="vviv-customer.html" class="hover:text-gray-300">VVIP Customer</a></li>
+
+            </ul>
+
+            <!-- MOBILE NAV -->
+            <div id="mobileNav" class="hidden lg:hidden bg-[#2e120c] px-4 pb-4 space-y-3">
+
+                <button id="diabetesBtn"
+                    class="w-full flex justify-between items-center py-2 border-b border-[#5b2a1f]">
+                    <span>Diabetes Support</span>
+                    <i class="fa fa-chevron-down"></i>
+                </button>
+
+                <ul id="diabetesMenu" class="hidden pl-4 space-y-2">
+                    <li><a href="diabutose-herbal-powder.htm" class="block px-4 py-2 hover:bg-[#3d1a12]">Diabutose Powder</a></li>
+                    <li><a href="karela&jammu-powder.htm" class="block px-4 py-2 hover:bg-[#3d1a12]">Karela Jamun Powder</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-[#3d1a12]">Ayurvedic Support</a></li>
+                </ul>
+
+                <li><a href="urga-vardhak.htm" class="hover:text-gray-300 block py-2">Urja Vardhak</a></li>
+                <li><a href="gas_niwarak.htm" class="hover:text-gray-300 block py-2">Gas Niwarak</a></li>
+                <li><a href="vviv-customer.html" class="hover:text-gray-300 block py-2">VVIP Customer</a></li>
+
+            </div>
+
+        </nav>
+    </div>
+
+    <script>
+        document.getElementById('mobileMenuBtn').onclick = () =>
+            document.getElementById('mobileNav').classList.toggle('hidden');
+
+        document.getElementById('diabetesBtn').onclick = () =>
+            document.getElementById('diabetesMenu').classList.toggle('hidden');
+    </script>
+<!---
+<body class="bg-[#FFFFFF] text-white">
+
+    -- HEADER --
     <header class="border-b border-[#556B2F]">
         <div style="background-color: #556B2F;">
             <div class="flex items-center justify-between px-4 py-3 lg:px-10 lg:py-5">
 
-                <!-- MOBILE MENU BUTTON -->
+                -- MOBILE MENU BUTTON --
                 <button id="mobileMenuBtn" class="lg:hidden text-xl">
                     <i class="fa-solid fa-bars"></i>
                 </button>
 
-                <!-- LOGO -->
+                -- LOGO --
                 <div class="flex flex-col items-center space-y-1">
                     <img src="../assets/images/logo.jpeg" class="w-12 h-12" alt="Logo" style="border-radius: 50%;">
                     <span class="text-xl font-serif">vaidhya amrit ayurveda</span>
                 </div>
 
-                <!-- SEARCH (DESKTOP) -->
+                -- SEARCH (DESKTOP) --
                 <div class="hidden lg:flex flex-1 mx-10">
                     <div class="relative flex-1">
                         <input type="text" class="w-full rounded-full px-10 py-3 bg-[#FFFFFF] border border-[#FFFFFF]"
@@ -41,14 +173,14 @@
                     </div>
                 </div>
 
-                <!-- ACCOUNT -->
+                -- ACCOUNT --
                 <button class="border px-5 py-2 rounded-full flex items-center space-x-2">
                     <i class="fa fa-user"></i>
                     <span>Account</span>
                 </button>
             </div>
 
-            <!-- SEARCH (MOBILE) -->
+            -- SEARCH (MOBILE) --
             <div class="px-4 pb-3 lg:hidden">
                 <div class="relative" style="background-color: white;">
                     <input type="text" class="w-full rounded-full px-10 py-3 bg-[#FFFFFF] border border-[#FFFFFF]"
@@ -60,14 +192,14 @@
 
     </header>
 
-    <!-- NAVIGATION -->
+    -- NAVIGATION --
     <div style="background-color: #556B2F">
         <nav class="border-b border-[#5b2a1f]">
 
-            <!-- DESKTOP NAV -->
+            -- DESKTOP NAV --
             <ul class="hidden lg:flex justify-center space-x-10 py-4">
 
-                <!-- DESKTOP DIABETES WITH FIX -->
+                -- DESKTOP DIABETES WITH FIX --
                 <li class="relative" onmouseenter="openDesktopMenu()" onmouseleave="closeDesktopMenu()">
 
                     <a href="#" class="flex items-center space-x-1 hover:text-gray-300">
@@ -92,7 +224,7 @@
                 <li><a href="vviv-customer.html" class="hover:text-gray-300">VVIP Customer</a></li>
             </ul>
 
-            <!-- MOBILE NAV -->
+            -- MOBILE NAV --
             <div id="mobileNav" class="hidden lg:hidden bg-[#2e120c] px-4 pb-4 space-y-3">
 
                 <button id="diabetesBtn"
@@ -117,6 +249,7 @@
 
         </nav>
     </div>
+-->
     <!--  Privacy Policy  -->
     <section class="policy-section">
 

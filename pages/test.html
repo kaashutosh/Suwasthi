@@ -1,282 +1,148 @@
-<!----
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Order Form</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      font-family: Arial;
-      background: #f4f6f8;
-      padding: 20px;
-    }
-
-    .box {
-      max-width: 400px;
-      margin: auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    input, select, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
-    button {
-      background: black;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-  </style>
-</head>
-
-<body>
-
-<div class="box">
-  <h2>Order Now</h2>
-
-  <form id="orderForm">
-    <input type="text" placeholder="Full Name" required>
-    <input type="tel" placeholder="Phone Number" required>
-
-    <select id="productSelect" required>
-      <option value="">Select Product</option>
-      <option value="44790764208182">Product 1 – ₹999</option>
-      <option value="12345678901235">Product 2 – ₹1499</option>
-      <option value="12345678901236">Product 3 – ₹1999</option>
-      <option value="12345678901237">Product 4 – ₹2499</option>
-      <option value="12345678901238">Product 5 – ₹2999</option>
-      <option value="12345678901239">Product 6 – ₹3499</option>
-    </select>
-
-    <button type="submit">Checkout</button>
-  </form>
-</div>
-
-<script>
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const variantId = document.getElementById("productSelect").value;
-
-  if (!variantId) {
-    alert("Please select a product");
-    return;
-  }
-
-  const shop = "mnhkqb-zs.myshopify.com";
-  // Redirect to Shopify checkout
-  window.location.href =
-    `https://${shop}/cart/${variantId}:1`;
-});
-</script>
-
-</body>
-</html>
--->
-<!DOCTYPE html>
-<html>
-<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checkout</title>
+
+<title>Responsive Header</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body{font-family:Arial;background:#eef1ef;margin:0;padding:15px;}
-
-.box{
-max-width:500px;
-margin:auto;
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-img{width:100%;max-width:200px;display:block;margin:auto;}
-
-h2{text-align:center;}
-
-select,input,button{
-width:100%;
-padding:12px;
-margin-top:10px;
-font-size:16px;
-}
-
-button{
-background:#c18b49;
-color:white;
-border:none;
-cursor:pointer;
-}
-
-.total{
-text-align:center;
-font-size:18px;
-margin-top:5px;
-}
+* { transition: all 0.25s ease; }
 </style>
+
 </head>
 
-<body>
+<body class="bg-white text-white">
 
-<div class="box">
+<!-- HEADER -->
+<header class="border-b border-[#556B2F] bg-[#556B2F]">
 
-<img id="pImg">
-<h2 id="pName"></h2>
+<div class="px-4 py-3 lg:px-10 lg:py-5">
 
-<div class="total">
-Price ₹ <span id="price"></span>
+    <!-- DESKTOP ROW -->
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+
+        <!-- MOBILE TOP ROW -->
+        <div class="flex items-center justify-between lg:hidden">
+
+            <button id="mobileMenuBtn" class="text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="flex flex-col items-center">
+                <img src="../assets/images/logo.jpeg"
+                     class="w-12 h-12 rounded-full"
+                     alt="Logo">
+                <span class="text-sm font-serif text-center mt-1">
+                    vaidhya amrit ayurveda
+                </span>
+            </div>
+
+            <button class="border px-3 py-1 rounded-full flex items-center space-x-1 text-sm">
+                <i class="fa fa-user"></i>
+            </button>
+        </div>
+
+        <!-- DESKTOP LOGO -->
+        <div class="hidden lg:flex flex-col items-center">
+            <img src="../assets/images/logo.jpeg"
+                 class="w-24 h-24 rounded-full"
+                 alt="Logo">
+            <span class="text-xl font-serif mt-1">
+                vaidhya amrit ayurveda
+            </span>
+        </div>
+
+        <!-- SEARCH CENTER -->
+        <div class="w-full lg:w-1/2">
+            <div class="relative">
+                <input type="text"
+                    class="w-full rounded-full px-10 py-3 text-black bg-white border border-white"
+                    placeholder="Search for...">
+                <i class="fa fa-search absolute left-3 top-3.5 text-gray-400"></i>
+            </div>
+        </div>
+
+        <!-- DESKTOP ACCOUNT -->
+        <div class="hidden lg:flex">
+            <button class="border px-5 py-2 rounded-full flex items-center space-x-2">
+                <i class="fa fa-user"></i>
+                <span>Account</span>
+            </button>
+        </div>
+
+    </div>
+
+</div>
+</header>
+
+<!-- NAVIGATION -->
+<div class="bg-[#556B2F]">
+
+<nav class="border-b border-[#5b2a1f]">
+
+<ul class="hidden lg:flex justify-center space-x-10 py-4">
+
+<li class="relative group pb-4">
+
+<a href="#" class="flex items-center space-x-1 hover:text-gray-300">
+<span>Diabetes Support</span>
+<i class="fa fa-chevron-down text-xs"></i>
+</a>
+
+<div class="absolute left-0 top-full w-full h-4"></div>
+
+<ul class="absolute left-0 top-full opacity-0 invisible
+           group-hover:opacity-100 group-hover:visible
+           bg-[#2e120c] mt-2 w-52 rounded-lg border border-[#5b2a1f]
+           z-50 py-2 transition duration-200">
+
+<li><a href="#" class="block px-4 py-2 hover:bg-[#3d1a12]">Diabutose Powder</a></li>
+<li><a href="#" class="block px-4 py-2 hover:bg-[#3d1a12]">Karela Jamun Powder</a></li>
+<li><a href="#" class="block px-4 py-2 hover:bg-[#3d1a12]">Ayurvedic Support</a></li>
+
+</ul>
+</li>
+
+<li><a href="#" class="hover:text-gray-300">Urja Vardhak</a></li>
+<li><a href="#" class="hover:text-gray-300">Gas Niwarak</a></li>
+<li><a href="#" class="hover:text-gray-300">VVIP Customer</a></li>
+
+</ul>
+
+<!-- MOBILE NAV -->
+<div id="mobileNav" class="hidden lg:hidden bg-[#2e120c] px-4 pb-4 space-y-3">
+
+<button id="diabetesBtn"
+class="w-full flex justify-between items-center py-2 border-b border-[#5b2a1f]">
+<span>Diabetes Support</span>
+<i class="fa fa-chevron-down"></i>
+</button>
+
+<ul id="diabetesMenu" class="hidden pl-4 space-y-2">
+<li><a href="#" class="block px-4 py-2 hover:bg-[#3d1a12]">Diabutose Powder</a></li>
+<li><a href="#" class="block px-4 py-2 hover:bg-[#3d1a12]">Karela Jamun Powder</a></li>
+<li><a href="#" class="block px-4 py-2 hover:bg-[#3d1a12]">Ayurvedic Support</a></li>
+</ul>
+
+<li><a href="#" class="hover:text-gray-300 block py-2">Urja Vardhak</a></li>
+<li><a href="#" class="hover:text-gray-300 block py-2">Gas Niwarak</a></li>
+<li><a href="#" class="hover:text-gray-300 block py-2">VVIP Customer</a></li>
+
 </div>
 
-<select id="qty">
-<option value="1">1 Item</option>
-<option value="2">2 Items</option>
-<option value="3">3 Items</option>
-<option value="4">4 Items</option>
-</select>
-
-<div class="total">
-Total ₹ <span id="total"></span>
-</div>
-
-<form id="form">
-<input placeholder="First Name" required>
-<input placeholder="Phone Number" required>
-<input placeholder="Address" required>
-<button type="submit">Submit COD Order</button>
-</form>
-
+</nav>
 </div>
 
 <script>
+document.getElementById('mobileMenuBtn').onclick = () =>
+document.getElementById('mobileNav').classList.toggle('hidden');
 
-const params = new URLSearchParams(window.location.search);
-
-const name = params.get("name");
-const price = parseInt(params.get("price"));
-const img = params.get("img");
-const variant = params.get("variant");
-
-document.getElementById("pName").innerText = name;
-document.getElementById("pImg").src = img;
-document.getElementById("price").innerText = price;
-
-const qtySelect = document.getElementById("qty");
-const totalSpan = document.getElementById("total");
-
-function updateTotal(){
-totalSpan.innerText = price * qtySelect.value;
-}
-updateTotal();
-qtySelect.addEventListener("change",updateTotal);
-
-const shop = "mnhkqb-zs.myshopify.com";
-
-document.getElementById("form").addEventListener("submit",function(e){
-e.preventDefault();
-
-const qty = qtySelect.value;
-
-window.location.href =
-`https://${shop}/cart/${variant}:${qty}`;
-});
-</script>
-
-</body>
-</html>
-
-
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products</title>
-
-<style>
-body{font-family:Arial;margin:0;background:#f5f5f5;padding:20px;}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1000px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:15px;
-border-radius:10px;
-text-align:center;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-img{width:100%;height:200px;object-fit:cover;border-radius:8px;}
-
-button{
-background:#c18b49;
-color:white;
-border:none;
-padding:12px;
-width:100%;
-font-size:16px;
-margin-top:10px;
-cursor:pointer;
-}
-
-button:hover{opacity:0.9;}
-</style>
-</head>
-
-<body>
-
-<div class="grid">
-
-<div class="card">
-<img src="../assets/images/diabutose-herbal-powder.png">
-<h3>Diabutose Herbal Powder</h3>
-<p>₹2199</p>
-<button onclick="buy('Diabutose Herbal Powder',2199,'../assets/images/diabutose-herbal-powder.png','44790764208182')">
-Buy Now
-</button>
-</div>
-
-<div class="card">
-<img src="p2.jpg">
-<h3>Product 2</h3>
-<p>₹999</p>
-<button onclick="buy('Product 2',999,'p2.jpg','22222222222222')">
-Buy Now
-</button>
-</div>
-
-<!-- add more products same way -->
-
-</div>
-
-<script>
-function buy(name,price,img,variant){
-window.location.href=
-`test.html?name=${encodeURIComponent(name)}
-&price=${price}
-&img=${encodeURIComponent(img)}
-&variant=${variant}`;
-}
+document.getElementById('diabetesBtn').onclick = () =>
+document.getElementById('diabetesMenu').classList.toggle('hidden');
 </script>
 
 </body>
