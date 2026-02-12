@@ -1,8 +1,13 @@
 * {
+        transition: all 0.25s ease;
+    }
+/*
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+    */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -101,7 +106,6 @@ body {
         width: 95%;
     }
 }
-
 
 /*     about-section    */
 .about-section {
@@ -209,8 +213,6 @@ body {
         font-size: 16px;
     }
 }
-
-
 
 /*   Why section   */
 .why-section {
@@ -336,8 +338,6 @@ body {
         text-align: center;
     }
 }
-
-
 
 /*   sitemap  */
 .sitemap-section{

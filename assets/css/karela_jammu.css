@@ -1,9 +1,13 @@
+* {
+        transition: all 0.25s ease;
+    }
+
 body{
     font-family: Arial, sans-serif;
     margin:0;
     padding:0;
 }
-
+/*
 .container{
     display:flex;
     flex-wrap:wrap;
@@ -93,6 +97,125 @@ body{
         text-align:center;
     }
 }
+    */
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f2f2f2;
+}
+
+.container{
+    max-width:420px;
+    margin:auto;
+    background:#ffffff;
+    padding:20px;
+    text-align:center;
+}
+
+/* Product image */
+.left img{
+    width:100%;
+    max-width:320px;
+    height:auto;
+    display:block;
+    margin:0 auto 20px;
+}
+
+/* Title */
+.right h1{
+    font-size:24px;
+    font-weight:700;
+    margin:10px 0;
+    color:#000;
+    letter-spacing:0.5px;
+}
+
+/* Description */
+.desc{
+    font-size:15px;
+    color:#333;
+    line-height:1.6;
+    margin-bottom:15px;
+}
+
+/* Feature icons/text */
+.icons{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-size:14px;
+    color:#6d406d;
+    margin:10px 0 20px;
+}
+
+/* Price */
+.price-section{
+    margin:10px 0;
+}
+
+.price{
+    font-size:26px;
+    font-weight:bold;
+    color:#3c0057;
+}
+
+.old-price{
+    font-size:18px;
+    color:#888;
+    text-decoration:line-through;
+    margin-left:8px;
+}
+
+/* Pack text */
+.pack{
+    font-size:15px;
+    margin-top:8px;
+}
+
+/* Buy button */
+.buy-btn{
+    width:100%;
+    background:#c18d4f;
+    color:#fff;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.buy-btn:hover{
+    opacity:0.9;
+}
+
+/* Desktop view */
+@media(min-width:768px){
+    .container{
+        max-width:1000px;
+        display:flex;
+        align-items:center;
+        text-align:left;
+        gap:40px;
+    }
+
+    .left, .right{
+        flex:1;
+    }
+
+    .right h1{
+        font-size:32px;
+    }
+
+    .buy-btn{
+        width:auto;
+        padding:15px 35px;
+    }
+}
+
+
 
 
 /*  certificate  */

@@ -1,3 +1,7 @@
+* {
+        transition: all 0.25s ease;
+    }
+
 .vvip-section {
     text-align: center;
     padding: 40px 20px;
